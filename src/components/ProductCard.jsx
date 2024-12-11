@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { IoShareSocialOutline, IoHeartOutline } from 'react-icons/io5'
 import { MdOutlineCompareArrows } from 'react-icons/md'
 
-export default function ProductCard() {
+function ProductCard() {
 	const showCart = (e) => {
 		e.preventDefault()
 	}
@@ -44,3 +44,5 @@ export default function ProductCard() {
 		</Link>
 	)
 }
+
+export default ProductCard

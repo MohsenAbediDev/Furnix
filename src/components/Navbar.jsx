@@ -11,7 +11,7 @@ function Navbar() {
 			</div>
 
 			{/* Routes */}
-			<div className='flex-center gap-x-5 font-poppins text-lg font-medium'>
+			<div className='flex-center gap-x-5 font-poppins text-lg font-semibold'>
 				<Link to='/'>Home</Link>
 				<Link to='/shop'>Shop</Link>
 				<Link to='/about'>About</Link>
