@@ -1,6 +1,6 @@
 import Header from "../components/Header"
 import Range from "../components/Range"
-import OurProduct from "../components/OurProduct"
+import Products from "../components/Products"
 import FuniroFurniture from "../components/FuniroFurniture"
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
     <div className="w-full">
       <Header />
       <Range />
-      <OurProduct />
+      <Products />
       <FuniroFurniture/>
     </div>
   </>
