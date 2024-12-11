@@ -5,7 +5,11 @@
 @layer base {
 	@font-face {
 		font-family: 'Poppins';
-		src: url('../Fonts/Poppins.ttf');
+		src: url(../public/Fonts/Poppins.ttf);
+	}
+
+	body {
+		@apply font-poppins
 	}
 }
 

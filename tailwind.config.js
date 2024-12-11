@@ -24,6 +24,8 @@ export default {
 
 		colors: {
 			primary: '#F9F1E7',
+			gold: '#B88E2F',
+			white: '#fff',
 		},
 	},
 	plugins: [],
