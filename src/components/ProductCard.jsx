@@ -10,7 +10,7 @@ export default function ProductCard() {
         <p className="text-gray text-sm">Night lamp</p>
         <p className="font-semibold text-lg">$ 2500</p>
       </div>
-      <div className="absolute w-full h-full bg-[#666666bf] z-10 top-0 flex-center opacity-100 duration-200">
+      <div className="absolute w-full h-full bg-[#666666bf] z-10 top-0 flex-center opacity-0 hover:opacity-100 duration-200">
         <div className="w-full flex flex-col items-center">
           <button className="bg-white w-[170px] h-[43px] text-gold">Add to cart</button>
           <div className="flex-center-between text-sm w-11/12 text-white font-bold mt-6">
