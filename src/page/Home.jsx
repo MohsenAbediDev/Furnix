@@ -1,6 +1,7 @@
 import Header from "../components/Header"
 import Range from "../components/Range"
 import OurProduct from "../components/OurProduct"
+import FuniroFurniture from "../components/FuniroFurniture"
 
 export default function Home() {
   return <>
@@ -8,6 +9,7 @@ export default function Home() {
       <Header />
       <Range />
       <OurProduct />
+      <FuniroFurniture/>
     </div>
   </>
 }
