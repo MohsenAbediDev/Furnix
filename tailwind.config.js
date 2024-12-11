@@ -25,6 +25,7 @@ export default {
 			gold: '#B88E2F',
 			white: '#fff',
 			gray: '#666666',
+			card: '#F4F5F7'
 		},
 	},
 	plugins: [],
