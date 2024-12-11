@@ -8,7 +8,7 @@ export default function Home() {
     <div className="w-full">
       <Header />
       <Range />
-      <Products />
+      <Products title='Our Product' usePagination={true} />
       <FuniroFurniture/>
     </div>
   </>

@@ -55,7 +55,7 @@ function Shop() {
 				</div>
 			</div>
 
-			<Products />
+			<Products title='' usePagination={true} />
 		</div>
 	)
 }
