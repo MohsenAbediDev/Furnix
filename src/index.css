@@ -11,5 +11,21 @@
 	body {
 		@apply font-poppins
 	}
+	@font-face {
+		font-family: 'Montserrat';
+		src: url('../Fonts/Montserrat.ttf');
+	}
 }
 
+@layer utilities {
+	.flex-center {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.flex-center-between {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
