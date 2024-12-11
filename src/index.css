@@ -9,7 +9,7 @@
 	}
 
 	body {
-		@apply font-poppins
+		@apply font-poppins;
 	}
 	@font-face {
 		font-family: 'Montserrat';
@@ -28,4 +28,16 @@
 		align-items: center;
 		justify-content: space-between;
 	}
+}
+
+/* Remove spinner keys in Chrome, Safari, Edge, and Opera */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* remove spinner buttons in Firefox */
+input[type='number'] {
+	-moz-appearance: textfield;
 }
