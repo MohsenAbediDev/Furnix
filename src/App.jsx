@@ -1,11 +1,12 @@
 import { useRoutes } from 'react-router-dom'
 import Routes from './Routes'
+import Navbar from './components/Navbar'
 
 function App() {
 	const routes = useRoutes(Routes)
 	return (
 		<>
-			<h1>salam</h1>
+			<Navbar />
 
 			{routes}
 		</>
