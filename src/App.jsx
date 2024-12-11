@@ -5,8 +5,6 @@ function App() {
 	const routes = useRoutes(Routes)
 	return (
 		<>
-			<h1>salam</h1>
-
 			{routes}
 		</>
 	)
