@@ -1,4 +1,5 @@
 import ProductCard from './ProductCard'
+import { Link } from 'react-router-dom'
 
 function Products({ title, usePagination }) {
 	return (
@@ -23,9 +24,11 @@ function Products({ title, usePagination }) {
 				{usePagination ? (
 					''
 				) : (
-					<button className='border-gold border-2 text-base text-gold px-14 py-2 my-7 hover:bg-gold hover:text-white duration-200'>
+					<Link
+						to='/shop'
+						className='border-gold border-2 text-base text-gold px-14 py-2 my-7 hover:bg-gold hover:text-white duration-200'>
 						Show More
-					</button>
+					</Link>
 				)}
 			</div>
 		</section>
