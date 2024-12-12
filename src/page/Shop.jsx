@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import PageBanner from '../components/PageBanner'
 import Products from '../components/Products'
+import PaginationRounded from '../components/PaginationRounded'
 
 function Shop() {
 	const [resultCount, setResultCount] = useState(16)
@@ -55,7 +56,11 @@ function Shop() {
 				</div>
 			</div>
 
-			<Products title='' usePagination={true} />
+			{/* Show products */}
+			<Products title='' usePagination={true} /> 
+
+			{/* Use pagination */}
+			<PaginationRounded />
 		</div>
 	)
 }
