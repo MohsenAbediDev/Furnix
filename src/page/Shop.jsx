@@ -29,7 +29,7 @@ function Shop() {
 
 					{/* Results */}
 
-					<div className='flex-center gap-x-1 text-sm cursor-pointer'>
+					<div className='flex-center gap-x-1 text-sm'>
 						Showing
 						<span>1-{resultCount}</span>
 						of
@@ -41,7 +41,7 @@ function Shop() {
 				{/* Display section */}
 				<div className='flex-center gap-x-3'>
 					{/* Filter */}
-					<div className='flex-center gap-x-2 text-sm cursor-pointer'>
+					<div className='flex-center gap-x-2 text-sm'>
 						Show
 						<input
 							type='number'
