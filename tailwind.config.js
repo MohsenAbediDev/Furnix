@@ -24,6 +24,7 @@ export default {
 			primary: '#F9F1E7',
 			gold: '#B88E2F',
 			white: '#fff',
+			black: '#000',
 			gray: '#666666',
 			card: '#F4F5F7',
 			grayBorder: '#D9D9D9',

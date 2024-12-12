@@ -15,14 +15,8 @@
 	}
 
 	/* Base Configs */
-	html {
+	* {
 		box-sizing: border-box;
-	}
-
-	*,
-	*::before,
-	*::after {
-		box-sizing: inherit;
 		margin: 0;
 		padding: 0;
 	}
@@ -32,14 +26,24 @@
 	}
 }
 
+/* Utility Classes */
 @layer utilities {
-	/* Utility Classes */
+	/* Flex Classes*/
 	.flex-center {
 		@apply flex items-center justify-center;
 	}
 
 	.flex-center-between {
 		@apply flex items-center justify-between;
+	}
+
+	.flex-start-between {
+		@apply flex items-start justify-between;
+	}
+
+	/* Footer Inputs styles */
+	.footer-input {
+		@apply border-b-2 border-b-black outline-none;
 	}
 }
 
@@ -50,7 +54,6 @@
 		-webkit-appearance: none;
 		margin: 0;
 	}
-
 	input[type='number'] {
 		-moz-appearance: textfield;
 	}
