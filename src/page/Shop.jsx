@@ -18,12 +18,12 @@ function Shop() {
 				<div className='flex-center gap-x-3'>
 					{/* Filter */}
 					<img
-						src='public/icons/FilterSetting.png'
+						src='/icons/FilterSetting.png'
 						className='cursor-pointer'
 					/>
 					<span className='font-semibold cursor-pointer'>Filter</span>
-					<img src='public/icons/Grid.png' className='cursor-pointer' />
-					<img src='public/icons/ViewList.png' className='cursor-pointer' />
+					<img src='/icons/Grid.png' className='cursor-pointer' />
+					<img src='/icons/ViewList.png' className='cursor-pointer' />
 
 					<span className='font-light mx-2'>|</span>
 

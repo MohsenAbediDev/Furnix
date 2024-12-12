@@ -11,7 +11,7 @@ function ProductCard() {
 		<Link
 			to=''
 			className='w-[245px] h-[383px] bg-card relative overflow-hidden'>
-			<img src='public/images/image 1.png' className='w-full' />
+			<img src='/images/image 1.png' className='w-full' />
 
 			<div className='w-full p-4 flex flex-col gap-y-2'>
 				<p className='font-semibold text-xl'>Grifo</p>

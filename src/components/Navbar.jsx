@@ -6,7 +6,7 @@ function Navbar() {
 		<div className='flex-center-between w-full h-16 px-10'>
 			{/* Logo */}
 			<div className='flex-center'>
-				<img className='w-8 h-6' src='public/images/Logo.png' alt='Furniro' />
+				<img className='w-8 h-6' src='/images/Logo.png' alt='Furniro' />
 				<span className='font-montserrat font-bold text-2xl'>FURNIRO</span>
 			</div>
 
@@ -21,19 +21,19 @@ function Navbar() {
 			{/* Action routes */}
 			<div className='flex-center gap-x-6'>
 				<Link to='/user' className='w-5'>
-					<img src='public/icons/User.png' />
+					<img src='/icons/User.png' />
 				</Link>
 
 				<button className='w-5'>
-					<img src='public/icons/Search.png' />
+					<img src='/icons/Search.png' />
 				</button>
 
 				<Link to='/favorite' className='w-5'>
-					<img src='public/icons/Heart.png' />
+					<img src='/icons/Heart.png' />
 				</Link>
 
 				<button className='w-5'>
-					<img src='public/icons/Cart.png' />
+					<img src='/icons/Cart.png' />
 				</button>
 			</div>
 		</div>

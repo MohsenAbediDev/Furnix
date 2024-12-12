@@ -11,24 +11,21 @@ function Range() {
 				<div className='flex-center-between gap-x-6'>
 					<div className='flex flex-col items-center'>
 						<img
-							src='../../public/images/image 106.png'
-							alt=''
+							src='/images/image 106.png'
 							className='rounded-md w-[281px] h-[380px]'
 						/>
 						<p className='font-semibold text-2xl mt-7'>Dining</p>
 					</div>
 					<div className='flex flex-col items-center'>
 						<img
-							src='../../public/images/image 100.png'
-							alt=''
+							src='/images/image 100.png'
 							className='rounded-md w-[281px] h-[380px]'
 						/>
 						<p className='font-semibold text-2xl mt-7'>Living</p>
 					</div>
 					<div className='flex flex-col items-center'>
 						<img
-							src='../../public/images/image 101.png'
-							alt=''
+							src='/images/image 101.png'
 							className='rounded-md w-[281px] h-[380px]'
 						/>
 						<p className='font-semibold text-2xl mt-7'>Bedroom</p>
