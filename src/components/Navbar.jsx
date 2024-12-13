@@ -29,10 +29,10 @@ function Navbar() {
 	return (
 		<div className='relatvie flex-center-between w-full h-16 px-10'>
 			{/* Logo */}
-			<div className='flex-center'>
+			<Link to='/' className='flex-center'>
 				<img className='w-8 h-6' src='/images/Logo.png' alt='Furniro' />
 				<span className='font-montserrat font-bold text-2xl'>FURNIRO</span>
-			</div>
+			</Link>
 
 			{/* Routes */}
 			<div className='flex-center gap-x-5 font-poppins text-lg font-semibold'>
