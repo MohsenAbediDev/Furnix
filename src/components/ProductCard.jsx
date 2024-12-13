@@ -9,7 +9,7 @@ function ProductCard() {
 
 	return (
 		<Link
-			to=''
+			to='/product/1'
 			className='w-[245px] h-[383px] bg-card relative overflow-hidden'>
 			<img src='/images/image 1.png' className='w-full' />
 

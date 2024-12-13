@@ -6,12 +6,12 @@
 	/* Fonts */
 	@font-face {
 		font-family: 'Poppins';
-		src: url('/Fonts/Poppins.ttf');
+		src: url('/fonts/Poppins.ttf');
 	}
 
 	@font-face {
 		font-family: 'Montserrat';
-		src: url('/Fonts/Montserrat.ttf');
+		src: url('/fonts/Montserrat.ttf');
 	}
 
 	/* Base Configs */
