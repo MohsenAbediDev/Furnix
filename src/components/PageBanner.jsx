@@ -1,4 +1,5 @@
 import { IoIosArrowForward } from 'react-icons/io'
+import { Link } from 'react-router-dom'
 
 function PageBanner() {
 	const pageName = window.location.pathname.split('/')[1]
@@ -16,7 +17,9 @@ function PageBanner() {
 
 				{/* Route */}
 				<div className='flex-center gap-x-1'>
-					<span className='font-semibold'>Home</span>
+					<Link to='/' className='font-semibold'>
+						Home
+					</Link>
 					<IoIosArrowForward className='text-xl' />
 					{pageName}
 				</div>

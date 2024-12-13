@@ -1,5 +1,6 @@
 import { useRoutes } from 'react-router-dom'
 import ScrollToTop from 'react-scroll-to-top'
+import ResetPageScroll from './utils/utils'
 import Routes from './Routes'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -12,6 +13,8 @@ function App() {
 
 			{routes}
 
+			<ResetPageScroll />
+			
 			<ScrollToTop
 				className='flex-center rounded-full bg-primary'
 				viewBox='0 0 24 24'
