@@ -28,6 +28,7 @@ export default {
 			gray: '#666666',
 			card: '#F4F5F7',
 			grayBorder: '#D9D9D9',
+			infoStripText: '#898989',
 			footerText: '#9F9F9F',
 		},
 	},

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import PageBanner from '../components/PageBanner'
 import Products from '../components/Products'
+import InfoStrip from '../components/InfoStrip'
 import PaginationRounded from '../components/PaginationRounded'
 
 function Shop() {
@@ -17,10 +18,7 @@ function Shop() {
 				{/* Filter section */}
 				<div className='flex-center gap-x-3'>
 					{/* Filter */}
-					<img
-						src='/icons/FilterSetting.png'
-						className='cursor-pointer'
-					/>
+					<img src='/icons/FilterSetting.png' className='cursor-pointer' />
 					<span className='font-semibold cursor-pointer'>Filter</span>
 					<img src='/icons/Grid.png' className='cursor-pointer' />
 					<img src='/icons/ViewList.png' className='cursor-pointer' />
@@ -57,7 +55,10 @@ function Shop() {
 			</div>
 
 			{/* Show products */}
-			<Products title='' usePagination={true} /> 
+			<Products title='' usePagination={true} />
+
+			{/* Show information strip */}
+			<InfoStrip />
 
 			{/* Use pagination */}
 			<PaginationRounded />

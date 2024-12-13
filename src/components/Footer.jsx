@@ -58,7 +58,7 @@ function Footer() {
 
 			{/* Copy right */}
 			<div className='px-20 py-8'>
-				<p>2024 furino. All rights reverved</p>
+				<p>2024 furinro. All rights reverved</p>
 			</div>
 		</div>
 	)
