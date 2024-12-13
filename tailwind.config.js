@@ -30,6 +30,8 @@ export default {
 			grayBorder: '#D9D9D9',
 			infoStripText: '#898989',
 			footerText: '#9F9F9F',
+			star: '#FFC700',
+			purple: '#816DFA',
 		},
 	},
 	plugins: [],
