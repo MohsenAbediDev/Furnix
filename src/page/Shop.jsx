@@ -57,11 +57,11 @@ function Shop() {
 			{/* Show products */}
 			<Products title='' usePagination={true} />
 
-			{/* Show information strip */}
-			<InfoStrip />
-
 			{/* Use pagination */}
 			<PaginationRounded />
+
+			{/* Show information strip */}
+			<InfoStrip />
 		</div>
 	)
 }

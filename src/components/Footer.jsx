@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 function Footer() {
 	return (
-		<div className='w-full h-[400px] mt-10 border-t-[1px] border-t-grayBorder'>
+		<div className='w-full h-[400px] border-t-[1px] border-t-grayBorder'>
 			{/* Links and more */}
 			<div className='flex-start-between h-auto px-20 mt-5 mb-10'>
 				{/* Company */}
