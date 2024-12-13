@@ -1,9 +1,13 @@
+import PageBanner from '../components/PageBanner'
 import InfoStrip from '../components/InfoStrip'
-import { FaTrash } from "react-icons/fa";
+import { FaTrash } from 'react-icons/fa'
 
 function Cart() {
 	return (
 		<>
+			{/* Banner */}
+			<PageBanner />
+
 			<div className='flex-start-between w-10/12 gap-x-8 mx-auto p-20'>
 				{/* Product Inforamtion */}
 				<div className='flex-center flex-col w-full'>
@@ -47,7 +51,7 @@ function Cart() {
 									<span> $150 </span>
 								</div>
 
-                <FaTrash className='text-xl text-gold mr-2 cursor-pointer' />
+								<FaTrash className='text-xl text-gold mr-2 cursor-pointer' />
 							</div>
 						</div>
 					</div>
