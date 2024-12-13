@@ -41,10 +41,21 @@
 	.flex-start-between {
 		@apply flex items-start justify-between;
 	}
+	.flex-start-center {
+		@apply flex items-start justify-center;
+	}
 
 	/* Footer Inputs styles */
 	.footer-input {
 		@apply border-b-2 border-b-black outline-none;
+	}
+
+	/* Other Class */
+	.hide {
+		@apply opacity-0 invisible;
+	}
+	.show {
+		@apply opacity-100 visible;
 	}
 }
 
