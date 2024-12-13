@@ -2,14 +2,91 @@
   "products": [
     {
       "id": "1",
-      "images": "",
-      "name": "",
-      "category": "",
-      "description": "",
-      "rating": "",
-      "price": "",
-      "sizes": "",
-      "colors": ""
+      "images": "/images/image 1.png",
+      "name": "Syltherine",
+      "category": "Stylish cafe chair",
+      "description": "Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.",
+      "rating": "4.5",
+      "price": "100",
+      "sizes": ["L", "XL", "XS"],
+      "colors": ["#FFF"]
+    },
+    {
+      "id": "2",
+      "images": "/images/image 2.png",
+      "name": "Syltherine",
+      "category": "Stylish cafe chair",
+      "description": "Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.",
+      "rating": "4.5",
+      "price": "100",
+      "sizes": ["L", "XL", "XS"],
+      "colors": ["#FFF"]
+    },
+    {
+      "id": "3",
+      "images": "/images/image 3.png",
+      "name": "Syltherine",
+      "category": "Stylish cafe chair",
+      "description": "Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.",
+      "rating": "4.5",
+      "price": "100",
+      "sizes": ["L", "XL", "XS"],
+      "colors": ["#FFF"]
+    },
+    {
+      "id": "4",
+      "images": "/images/image 4.png",
+      "name": "Syltherine",
+      "category": "Stylish cafe chair",
+      "description": "Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.",
+      "rating": "4.5",
+      "price": "100",
+      "sizes": ["L", "XL", "XS"],
+      "colors": ["#FFF"]
+    },
+    {
+      "id": "5",
+      "images": "/images/image 5.png",
+      "name": "Syltherine",
+      "category": "Stylish cafe chair",
+      "description": "Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.",
+      "rating": "4.5",
+      "price": "100",
+      "sizes": ["L", "XL", "XS"],
+      "colors": ["#FFF"]
+    },
+    {
+      "id": "6",
+      "images": "/images/image 6.png",
+      "name": "Syltherine",
+      "category": "Stylish cafe chair",
+      "description": "Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.",
+      "rating": "4.5",
+      "price": "100",
+      "sizes": ["L", "XL", "XS"],
+      "colors": ["#FFF"]
+    },
+    {
+      "id": "7",
+      "images": "/images/image 7.png",
+      "name": "Syltherine",
+      "category": "Stylish cafe chair",
+      "description": "Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.",
+      "rating": "4.5",
+      "price": "100",
+      "sizes": ["L", "XL", "XS"],
+      "colors": ["#FFF"]
+    },
+    {
+      "id": "8",
+      "images": "/images/image 8.png",
+      "name": "Syltherine",
+      "category": "Stylish cafe chair",
+      "description": "Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.",
+      "rating": "4.5",
+      "price": "100",
+      "sizes": ["L", "XL", "XS"],
+      "colors": ["#FFF"]
     }
   ]
 }
