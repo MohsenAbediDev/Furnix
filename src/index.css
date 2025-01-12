@@ -51,11 +51,20 @@
 	}
 
 	/* Other Class */
+	.menu {
+		@apply flex-center-start text-xl font-bold gap-x-1
+	}
 	.hide {
 		@apply opacity-0 invisible;
 	}
 	.show {
 		@apply opacity-100 visible;
+	}
+	.hide-menu {
+		@apply -left-80;
+	}
+	.show-menu {
+		@apply left-0;
 	}
 }
 

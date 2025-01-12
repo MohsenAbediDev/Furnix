@@ -9,6 +9,14 @@ export default {
 			},
 		},
 
+		//? Media Screen's Size
+		screens: {
+			sm: { max: '640px' },
+			md: { max: '768px' },
+			lg: { max: '1024px' },
+			xl: { max: '1280px' },
+			'2xl': { min: '1480px' },
+		},
 		container: {
 			center: true,
 			screens: {
