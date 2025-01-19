@@ -10,7 +10,7 @@ function ProductCard() {
 	return (
 		<Link
 			to='/product/1'
-			className='w-[245px] h-[383px] bg-card relative overflow-hidden'>
+			className='w-[245px] sm:w-[190px] h-[383px] sm:h-[350px] bg-card relative overflow-hidden'>
 			<img src='/images/image 1.png' className='w-full' />
 
 			<div className='w-full p-4 flex flex-col gap-y-2'>
@@ -27,15 +27,15 @@ function ProductCard() {
 						Add to cart
 					</button>
 
-					<div className='flex-center-between text-sm w-11/12 text-white font-bold mt-6'>
-						<span className='flex gap-x-1'>
-							<IoShareSocialOutline className='text-xl' /> Share
+					<div className='flex-center-between text-sm w-11/12 sm:w-full sm:hidden text-white font-bold mt-6'>
+						<span className='flex-center gap-x-1 sm:text-xs'>
+							<IoShareSocialOutline className='text-xl sm:text-sm' /> Share
 						</span>
-						<span className='flex gap-x-1'>
-							<MdOutlineCompareArrows className='text-xl' /> Compare
+						<span className='flex-center gap-x-1 sm:text-xs'>
+							<MdOutlineCompareArrows className='text-xl sm:text-sm' /> Compare
 						</span>
-						<span className='flex gap-x-1'>
-							<IoHeartOutline className='text-xl' />
+						<span className='flex-center gap-x-1 sm:text-xs'>
+							<IoHeartOutline className='text-xl sm:text-sm' />
 							Like
 						</span>
 					</div>

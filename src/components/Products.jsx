@@ -9,7 +9,7 @@ function Products({ title, usePagination }) {
 				{title && <p className='my-12 text-3xl font-semibold'>{title} </p>}
 
 				{/* Show products */}
-				<div className='grid grid-cols-4 sm:grid-cols-2 gap-5'>
+				<div className='grid grid-cols-4 sm:grid-cols-2 gap-5 sm:gap-x-5'>
 					<ProductCard />
 					<ProductCard />
 					<ProductCard />
