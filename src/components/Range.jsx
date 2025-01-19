@@ -4,18 +4,23 @@ function Range() {
 			<div>
 				<div className='flex flex-col items-center my-12'>
 					<p className='text-3xl font-bold'>Browse The Range</p>
-					<p className='text-gray'>
+
+					<p className='text-gray mt-2 sm:text-center sm:px-5'>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit
 					</p>
 				</div>
-				<div className='flex-center-between gap-x-6'>
+
+				<div className='flex-center-between sm:flex-center gap-x-6 sm:gap-y-5 sm:flex-wrap'>
+					{/* Dining Box */}
 					<div className='flex flex-col items-center'>
 						<img
 							src='/images/image 106.png'
 							className='rounded-md w-[281px] h-[380px]'
 						/>
-						<p className='font-semibold text-2xl mt-7'>Dining</p>
+						<p className='font-semibold text-2xl mt-7 sm:mt-2'>Dining</p>
 					</div>
+
+					{/* Living Box */}
 					<div className='flex flex-col items-center'>
 						<img
 							src='/images/image 100.png'
@@ -23,6 +28,8 @@ function Range() {
 						/>
 						<p className='font-semibold text-2xl mt-7'>Living</p>
 					</div>
+
+					{/* Bedroom Box */}
 					<div className='flex flex-col items-center'>
 						<img
 							src='/images/image 101.png'
