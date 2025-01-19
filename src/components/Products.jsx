@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom'
 
 function Products({ title, usePagination }) {
 	return (
-		<section className='flex justify-center'>
-			<div className={`w-10/12 flex flex-col items-center ${!title && 'mt-8'}`}>
+		<section id='products' className='flex-start-center'>
+			<div className={`w-10/12 sm:w-11/12 flex-center-start flex-col ${!title && 'mt-8'}`}>
 				{/* Show title */}
 				{title && <p className='my-12 text-3xl font-semibold'>{title} </p>}
 
 				{/* Show products */}
-				<div className='grid grid-cols-4 gap-5'>
+				<div className='grid grid-cols-4 sm:grid-cols-2 gap-5'>
 					<ProductCard />
 					<ProductCard />
 					<ProductCard />
