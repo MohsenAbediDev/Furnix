@@ -1,10 +1,10 @@
 function HeaderPromo() {
 	return (
-		<div className='w-[643px] h-[433px] bg-primary rounded-lg block px-[37px] pb-[37px] pt-[55px]'>
+		<div className='w-[643px] h-[433px] sm:h-[300px] bg-primary rounded-lg block px-[37px] sm:px-4 pb-[37px] pt-[55px] sm:py-4 sm:mt-5'>
 			<div className='w-full h-full relative'>
-				<p className='font-semibold text-base tracking-[3px]'>New Arrival</p>
+				<p className='font-semibold text-base tracking-[3px] sm:hidden'>New Arrival</p>
 
-				<p className='text-gold font-bold text-[47px] leading-tight my-2'>
+				<p className='text-gold font-bold text-[47px] sm:text-2xl leading-tight my-2'>
 					Discover Our <br /> New Collection
 				</p>
 
@@ -13,7 +13,7 @@ function HeaderPromo() {
 					tellus, luctus nec ullamcorper mattis.
 				</p>
 
-				<button className='w-[222px] h-[74px] bg-gold text-white font-bold block absolute bottom-0'>
+				<button className='w-[222px] h-[74px] sm:h-16 bg-gold text-white font-bold block absolute bottom-0 rounded-sm'>
 					BUY NOW
 				</button>
 			</div>

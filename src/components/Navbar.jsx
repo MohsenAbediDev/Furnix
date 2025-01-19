@@ -91,7 +91,7 @@ function Navbar() {
 			{/* Menu Sidebar for Mobile */}
 			<div
 				ref={menuSidebar}
-				className='hidden sm:flex flex-col gap-5 py-5 absolute w-2/4 h-screen z-50 top-16 left-0 bg-white transition-all hide-menu'>
+				className='hidden sm:flex flex-col gap-5 py-5 px-2 absolute w-2/4 h-screen z-50 top-16 left-0 bg-white transition-all hide-menu'>
 				<Link to='/' className='menu'>
 					<IoHomeOutline />
 					Home
