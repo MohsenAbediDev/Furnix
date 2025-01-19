@@ -14,9 +14,9 @@ function Shop() {
 			<PageBanner />
 
 			{/* Filter and Display Bar */}
-			<div className='bg-primary h-16 px-32 flex-center-between '>
+			<div className='bg-primary h-16 px-32 sm:px-4 flex-center-between '>
 				{/* Filter section */}
-				<div className='flex-center gap-x-3'>
+				<div className='flex-center gap-x-3 '>
 					{/* Filter */}
 					<img src='/icons/FilterSetting.png' className='cursor-pointer' />
 					<span className='font-semibold cursor-pointer'>Filter</span>
@@ -27,7 +27,7 @@ function Shop() {
 
 					{/* Results */}
 
-					<div className='flex-center gap-x-1 text-sm'>
+					<div className='flex-center sm:hidden gap-x-1 text-sm'>
 						Showing
 						<span>1-{resultCount}</span>
 						of

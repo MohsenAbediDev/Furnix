@@ -2,7 +2,7 @@ import React from 'react'
 
 function InfoStrip() {
 	return (
-		<div className='flex-center bg-primary gap-x-16 py-16 mt-10'>
+		<div className='flex-center sm:flex-col sm:gap-y-8 bg-primary gap-x-16 py-16 sm:py-8 mt-10'>
 			{/* Quality */}
 			<div className='flex-center gap-x-2'>
 				<img src='/icons/Trophy.png' className='w-10' />
@@ -33,7 +33,7 @@ function InfoStrip() {
 			</div>
 
 			{/* Shipping */}
-			<div className='flex-center gap-x-2'>
+			<div className='flex-center gap-x-2 sm:mr-14'>
 				<img src='/icons/Shipping.png' className='w-10' />
 
 				<div className='flex flex-col'>
