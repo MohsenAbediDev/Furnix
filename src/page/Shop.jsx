@@ -26,7 +26,6 @@ function Shop() {
 					<span className='font-light mx-2'>|</span>
 
 					{/* Results */}
-
 					<div className='flex-center sm:hidden gap-x-1 text-sm'>
 						Showing
 						<span>1-{resultCount}</span>
