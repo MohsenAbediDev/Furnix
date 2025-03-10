@@ -6,7 +6,7 @@ function Footer() {
 			{/* Links and more */}
 			<div className='flex-start-between flex-wrap h-auto px-20 sm:px-5 mt-5 mb-10'>
 				{/* Company */}
-				<div className='flex flex-col h-full gap-y-10 sm:gap-y-5 sm:flex-[60%] mb-5'>
+				<div className='flex flex-col h-full gap-y-10 sm:gap-y-5 sm:flex-[100%] mb-5'>
 					<span className='font-poppins font-bold text-xl'>Furniro</span>
 					<div className='text-footerText w-9/12 leading-8 text-sm'>
 						<p>400 University Drive Suite 200 Coral Gables,</p>
@@ -15,7 +15,7 @@ function Footer() {
 				</div>
 
 				{/* Links */}
-				<div className='flex flex-col h-full gap-y-10 sm:gap-y-5 sm:flex-[40%] mb-5'>
+				<div className='flex flex-col h-full gap-y-10 sm:gap-y-5 sm:flex-[50%] mb-5'>
 					<span className='text-footerText'>Links</span>
 					<div className='flex flex-col gap-y-8'>
 						<Link to='/'> Home </Link>
@@ -26,7 +26,7 @@ function Footer() {
 				</div>
 
 				{/* Help */}
-				<div className='flex flex-col h-full gap-y-10 sm:gap-y-5 sm:flex-[100%] mb-5'>
+				<div className='flex flex-col h-full gap-y-10 sm:gap-y-5 sm:flex-[50%] mb-5'>
 					<span className='text-footerText'>Help</span>
 					<div className='flex flex-col gap-y-8'>
 						<Link to='/payment-options'> Payment Options </Link>
