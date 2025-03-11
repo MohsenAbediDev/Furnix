@@ -19,7 +19,7 @@ function PaginationRounded() {
 	return (
 		<ThemeProvider theme={theme}>
 			<Stack spacing={2} className='flex-center my-8'>
-				<Pagination count={3} shape='rounded' color='primary'/>
+				<Pagination count={1} shape='rounded' color='primary'/>
 			</Stack>
 		</ThemeProvider>
 	)
