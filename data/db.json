@@ -9,7 +9,7 @@
       "rating": "4.5",
       "price": "100",
       "sizes": ["L", "XL", "XS"],
-      "colors": ["#FFF"]
+      "colors": ["white"]
     },
     {
       "id": "2",
@@ -20,7 +20,7 @@
       "rating": "4.5",
       "price": "90",
       "sizes": ["L", "XL", "XS"],
-      "colors": ["#FFF"]
+      "colors": ["white"]
     },
     {
       "id": "3",
@@ -31,7 +31,7 @@
       "rating": "4.5",
       "price": "100",
       "sizes": ["L", "XS"],
-      "colors": ["#FFF"]
+      "colors": ["white"]
     },
     {
       "id": "4",
@@ -42,7 +42,7 @@
       "rating": "4.5",
       "price": "100",
       "sizes": ["L", "XL"],
-      "colors": ["#FFF"]
+      "colors": ["white"]
     },
     {
       "id": "5",
@@ -53,7 +53,7 @@
       "rating": "4.5",
       "price": "100",
       "sizes": ["L"],
-      "colors": ["#FFF"]
+      "colors": ["white"]
     },
     {
       "id": "6",
@@ -64,7 +64,7 @@
       "rating": "4.5",
       "price": "30",
       "sizes": ["L"],
-      "colors": ["#FFF"]
+      "colors": ["white"]
     },
     {
       "id": "7",
@@ -86,7 +86,7 @@
       "rating": "4.5",
       "price": "40",
       "sizes": ["L", "XL", "XS"],
-      "colors": ["#FFF"]
+      "colors": ["white"]
     }
   ]
 }
