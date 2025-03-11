@@ -8,7 +8,7 @@ function Cart() {
 			{/* Banner */}
 			<PageBanner />
 
-			<div className='flex-start-between sm:flex-col w-10/12 sm:w-full gap-x-8 sm:gap-x-0 mx-auto p-20 sm:p-0'>
+			<div className='flex-start-between sm:flex-col w-10/12 md:w-full sm:w-full gap-x-8 sm:gap-x-0 mx-auto p-20 md:p-5 sm:p-0'>
 				{/* Product Inforamtion */}
 				<div className='flex-center flex-col w-full'>
 					{/* Information bar */}
