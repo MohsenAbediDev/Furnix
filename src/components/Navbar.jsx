@@ -47,7 +47,7 @@ function Navbar() {
 	}
 
 	return (
-		<div className='relatvie flex-center-between w-full h-16 px-10 sm:px-2'>
+		<div className='fixed top-0 left-0 w-full h-16 bg-white px-10 sm:px-2 flex-center-between z-30'>
 			{/* Logo */}
 			<div className='flex-center-start gap-x-2'>
 				{/* Menu Icon for Mobile */}
