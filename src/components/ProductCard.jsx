@@ -1,11 +1,24 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { IoShareSocialOutline, IoHeartOutline } from 'react-icons/io5'
 import { MdOutlineCompareArrows } from 'react-icons/md'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToCart as addToCartReducer } from '../store/cart/cartSlice'
 
 function ProductCard({ product }) {
+	const dispatch = useDispatch()
+	const { items, loading, error } = useSelector((state) => state.cart)
+
 	const addToCart = (e) => {
 		e.preventDefault()
+		const newProduct = { ...product, quantity: 1 }
+
+		dispatch(addToCartReducer(newProduct))
 	}
+
+	useEffect(() => {
+		localStorage.setItem('cart', JSON.stringify(items))
+	}, [items])
 
 	return (
 		<Link

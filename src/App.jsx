@@ -1,4 +1,7 @@
+import { useEffect } from 'react'
 import { useRoutes } from 'react-router-dom' // Importing the hook to manage route rendering
+import { useDispatch } from 'react-redux'
+import { addToCart } from './store/cart/cartSlice'
 import ScrollToTop from 'react-scroll-to-top' // Component to scroll the page back to the top
 import ResetPageScroll from './utils/utils' // Custom utility to reset page scroll position
 import Routes from './Routes' // Routes configuration for the application
@@ -6,8 +9,16 @@ import Navbar from './components/Navbar' // Navigation bar component
 import Footer from './components/Footer' // Footer component
 
 function App() {
+	const dispatch = useDispatch()
+
 	// useRoutes takes the route configuration and returns the element to render
 	const routes = useRoutes(Routes)
+
+	// Load cart items from localStorage and dispatch them to Redux on initial render
+	useEffect(() => {
+		const storedItems = JSON.parse(localStorage.getItem('cart')) || [] // Retrieve stored cart items
+		storedItems.forEach((item) => dispatch(addToCart(item))) // Add each item to the Redux store
+	}, [dispatch])
 
 	return (
 		<>
