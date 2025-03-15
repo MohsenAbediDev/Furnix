@@ -1,12 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+// Load initial state from localStorage
+const initialState = {
+	items: JSON.parse(localStorage.getItem('cart')) || [],
+	loading: false,
+	error: null,
+}
+
 const cartSlice = createSlice({
 	name: 'cart',
-	initialState: {
-		items: JSON.parse(localStorage.getItem('cart')) || [],
-		loading: false,
-		error: null,
-	},
+	initialState,
 	reducers: {
 		addToCart: (state, action) => {
 			const existingItem = state.items.find(
@@ -18,6 +21,9 @@ const cartSlice = createSlice({
 			} else {
 				state.items.push({ ...action.payload, quantity: 1 })
 			}
+
+			// Update localStorage after each cart change
+			localStorage.setItem('cart', JSON.stringify(state.items))
 		},
 	},
 })
