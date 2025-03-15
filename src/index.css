@@ -70,6 +70,12 @@
 	.show-menu {
 		@apply left-0;
 	}
+
+	/* Custom Scrollbars */
+	.custom-scrollbar-y {
+		overflow-y: auto;
+		padding-right: 5px;
+	}
 }
 
 @layer components {
@@ -81,5 +87,29 @@
 	}
 	input[type='number'] {
 		-moz-appearance: textfield;
+	}
+
+	/* Custom Scrollbars */
+
+	/* Change the size and color of the scroll bar */
+	.custom-scrollbar-y::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	/* Change the scrollbar background color */
+	.custom-scrollbar-y::-webkit-scrollbar-track {
+		background: #f1f1f1;
+		border-radius: 4px;
+	}
+
+	/* Change the color and style of the scroll handle */
+	.custom-scrollbar-y::-webkit-scrollbar-thumb {
+		background: #666666cc;
+		border-radius: 4px;
+	}
+
+	/* Change style on hover */
+	.custom-scrollbar-y::-webkit-scrollbar-thumb:hover {
+		background: #555;
 	}
 }

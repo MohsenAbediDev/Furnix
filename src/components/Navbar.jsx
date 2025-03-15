@@ -1,10 +1,10 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { FaCircleXmark } from 'react-icons/fa6'
 import { IoMdMenu } from 'react-icons/io'
 import { IoHomeOutline } from 'react-icons/io5'
 import { MdOutlineShoppingBag, MdOutlineContactPage } from 'react-icons/md'
 import { LuShoppingCart } from 'react-icons/lu'
+import CartSidebarProduct from './CartSidebarProduct'
 
 function Navbar() {
 	const [toggleValue, setToggleValue] = useState(false)
@@ -121,23 +121,9 @@ function Navbar() {
 				</div>
 
 				{/* Products Section */}
-				<div className='flex flex-col overflow-y-auto scroll my-5 pt-5 gap-y-9 border-t-[1px] border-grayBorder h-[300px]'>
+				<div className='flex flex-col custom-scrollbar-y my-5 pt-5 gap-y-9 border-t-[1px] border-grayBorder h-[300px]'>
 					{/* Products  */}
-					<div className='flex-center-between'>
-						<div className='flex'>
-							<img className='w-20 rounded-md' src='./images/image 9.png' />
-
-							<div className='flex-start-center flex-col gap-y-3 ml-5'>
-								<p> Muggo </p>
-
-								<div className='flex-center-start gap-x-2'>
-									<span> 1 </span> X <span className='text-gold'> $150 </span>
-								</div>
-							</div>
-						</div>
-
-						<FaCircleXmark className='text-lg text-footerText cursor-pointer' />
-					</div>
+					<CartSidebarProduct />
 				</div>
 
 				{/* Info */}
