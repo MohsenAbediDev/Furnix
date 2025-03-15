@@ -1,16 +1,17 @@
 import { FaCircleXmark } from 'react-icons/fa6'
 
-function CartSidebarProduct() {
+function CartSidebarProduct({ product }) {
 	return (
 		<div className='flex-center-between'>
 			<div className='flex'>
-				<img className='w-20 rounded-md' src='./images/image 9.png' />
+				<img className='w-20 rounded-md' src={product.image} />
 
 				<div className='flex-start-center flex-col gap-y-3 ml-5'>
-					<p> Muggo </p>
+					<p> {product.name} </p>
 
 					<div className='flex-center-start gap-x-2'>
-						<span> 1 </span> X <span className='text-gold'> $150 </span>
+						<span> {product.quantity} </span> X
+						<span className='text-gold'> ${product.price} </span>
 					</div>
 				</div>
 			</div>

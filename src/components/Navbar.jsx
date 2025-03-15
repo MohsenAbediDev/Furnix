@@ -5,8 +5,13 @@ import { IoHomeOutline } from 'react-icons/io5'
 import { MdOutlineShoppingBag, MdOutlineContactPage } from 'react-icons/md'
 import { LuShoppingCart } from 'react-icons/lu'
 import CartSidebarProduct from './CartSidebarProduct'
+import { useSelector } from 'react-redux'
 
 function Navbar() {
+	const { items, loading, error } = useSelector((state) => state.cart)
+
+	console.log(items)
+
 	const [toggleValue, setToggleValue] = useState(false)
 	const [isOpenMenu, setIsOpenMenu] = useState(false)
 
@@ -123,7 +128,12 @@ function Navbar() {
 				{/* Products Section */}
 				<div className='flex flex-col custom-scrollbar-y my-5 pt-5 gap-y-9 border-t-[1px] border-grayBorder h-[300px]'>
 					{/* Products  */}
-					<CartSidebarProduct />
+					{items &&
+						items.map((product) => (
+							<CartSidebarProduct key={product.id} product={product} />
+						))}
+
+					{items.length === 0 && <p className='text-center text-xl text-blue'> Your Cart is Empty :( </p>}
 				</div>
 
 				{/* Info */}
