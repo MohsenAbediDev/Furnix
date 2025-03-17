@@ -41,6 +41,7 @@ export default {
 			infoStripText: '#898989',
 			footerText: '#9F9F9F',
 			star: '#FFC700',
+			skeleton: '#D1D5DB',
 		},
 	},
 	plugins: [],

@@ -76,6 +76,18 @@
 		overflow-y: auto;
 		padding-right: 5px;
 	}
+
+	/* Animations */
+
+	/* animation-pulse */
+	@keyframes pulse {
+		50% {
+			opacity: 0.5;
+		}
+	}
+	.animation-pulse {
+		animation: pulse 2s infinite;
+	}
 }
 
 @layer components {
