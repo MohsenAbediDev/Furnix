@@ -166,11 +166,11 @@ export default function ProductState() {
 							</div>
 						</div>
 
-						<div className='bg-primary rounded-lg h-[450px] w-[400px] md:w-full flex-center'>
+						<div className='h-[450px] w-[400px] md:w-full flex-center'>
 							<img
 								src={filteredProduct.image}
 								alt={filteredProduct.name}
-								className='w-full'
+								className='w-full h-full rounded-lg'
 							/>
 						</div>
 					</div>
@@ -194,7 +194,7 @@ export default function ProductState() {
 							</div>
 						</div>
 
-						<div className='w-[400px] md:w-full text-sm'>
+						<div className='w-[400px] md:w-full text-sm text-infoStripText'>
 							<p>{filteredProduct.description}</p>
 						</div>
 

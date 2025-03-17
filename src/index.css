@@ -86,7 +86,7 @@
 		}
 	}
 	.animation-pulse {
-		animation: pulse 2s infinite;
+		animation: pulse 1s infinite;
 	}
 }
 
