@@ -56,7 +56,11 @@ export default function ProductState() {
 						</div>
 
 						<div className='bg-primary rounded-lg h-[450px] w-[400px] md:w-full flex-center'>
-							<img src={filteredProduct.image} alt='' className='w-full' />
+							<img
+								src={filteredProduct.image}
+								alt={filteredProduct.name}
+								className='w-full'
+							/>
 						</div>
 					</div>
 
@@ -90,7 +94,9 @@ export default function ProductState() {
 									L
 								</div>*/}
 								{filteredProduct.sizes.map((size) => (
-									<div className='w-7 md:w-10 h-7 md:h-10 bg-primary flex-center rounded-md text-sm md:text-md'>
+									<div
+										key={size}
+										className='w-7 md:w-10 h-7 md:h-10 bg-primary flex-center rounded-md text-sm md:text-md'>
 										{size}
 									</div>
 								))}
@@ -102,6 +108,7 @@ export default function ProductState() {
 							<div className='flex gap-x-3'>
 								{filteredProduct.colors.map((color) => (
 									<div
+										key={color}
 										className={`w-7 md:w-10 h-7 md:h-10 bg-${color} border-[1px] border-footerText flex-center rounded-full text-sm`}></div>
 								))}
 							</div>

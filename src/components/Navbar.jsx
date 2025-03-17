@@ -10,8 +10,6 @@ import { useSelector } from 'react-redux'
 function Navbar() {
 	const { items, loading, error } = useSelector((state) => state.cart)
 
-	console.log(items)
-
 	const [toggleValue, setToggleValue] = useState(false)
 	const [isOpenMenu, setIsOpenMenu] = useState(false)
 
