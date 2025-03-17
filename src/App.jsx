@@ -10,27 +10,29 @@ function App() {
 	const routes = useRoutes(Routes)
 
 	return (
-		<>
+		<div className='container mx-auto'>
 			{/* Navbar at the top of the application */}
 			<Navbar />
+			
+			<main className='mt-16'>
+				{/* Render the routes for the current path */}
+				{routes}
 
-			{/* Render the routes for the current path */}
-			{routes}
+				{/* Reset the scroll position to the top on route change */}
+				<ResetPageScroll />
 
-			{/* Reset the scroll position to the top on route change */}
-			<ResetPageScroll />
-
-			{/* Button to scroll back to the top of the page */}
-			<ScrollToTop
-				className='flex-center rounded-full bg-primary z-50'
-				viewBox='0 0 24 24'
-				svgPath='M11.9999 10.8284L7.0502 15.7782L5.63599 14.364L11.9999 8L18.3639 14.364L16.9497 15.7782L11.9999 10.8284Z'
-				smooth
-			/>
+				{/* Button to scroll back to the top of the page */}
+				<ScrollToTop
+					className='flex-center rounded-full bg-primary z-50'
+					viewBox='0 0 24 24'
+					svgPath='M11.9999 10.8284L7.0502 15.7782L5.63599 14.364L11.9999 8L18.3639 14.364L16.9497 15.7782L11.9999 10.8284Z'
+					smooth
+				/>
+			</main>
 
 			{/* Footer at the bottom of the application */}
 			<Footer />
-		</>
+		</div>
 	)
 }
 
