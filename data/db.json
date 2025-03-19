@@ -3,7 +3,7 @@
     {
       "id": "1",
       "image": "/images/image 1.png",
-      "name": "Modern Cafe Chair",
+      "name": "Cafe Chair",
       "category": "Stylish Cafe Chair",
       "description": "A sleek and modern cafe chair with a minimalist design, perfect for contemporary spaces. Made from high-quality wood and metal for durability.",
       "rating": "4.5",
@@ -20,7 +20,7 @@
     {
       "id": "2",
       "image": "/images/image 2.png",
-      "name": "Elegant Dining Chair",
+      "name": "Dining Chair",
       "category": "Stylish Cafe Chair",
       "description": "An elegant dining chair with a cushioned seat and ergonomic design for maximum comfort. Ideal for home and restaurant use.",
       "rating": "4.5",
@@ -99,7 +99,7 @@
     {
       "id": "7",
       "image": "/images/image 11.png",
-      "name": "Cozy Bed Set",
+      "name": "Bed Set",
       "category": "Bedding",
       "description": "A soft and cozy bed set with premium cotton fabric. Includes sheets, pillowcases, and a duvet cover.",
       "rating": "4.5",
@@ -115,7 +115,7 @@
     {
       "id": "8",
       "image": "/images/image 12.png",
-      "name": "Modern Flower Pot",
+      "name": "Flower Pot",
       "category": "Home Decor",
       "description": "A minimalist flower pot with a contemporary design, perfect for indoor plants and succulents.",
       "rating": "4.5",

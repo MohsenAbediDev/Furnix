@@ -2,13 +2,13 @@ import { useSelector } from 'react-redux'
 import PageBanner from '../components/PageBanner'
 import InfoStrip from '../components/InfoStrip'
 import { FaTrash } from 'react-icons/fa'
+import { calculateTotalPrice } from '../utils/utils'
 
 function Cart() {
 	const { items, loading, error } = useSelector((state) => state.cart)
 
-	let totalPrice = 0
-	items?.forEach((item) => (totalPrice += Number(item.price)))
-
+	const totalPrice = calculateTotalPrice(items)
+	
 	return (
 		<>
 			{/* Banner */}

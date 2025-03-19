@@ -6,9 +6,11 @@ import { MdOutlineShoppingBag, MdOutlineContactPage } from 'react-icons/md'
 import { LuShoppingCart } from 'react-icons/lu'
 import CartSidebarProduct from './CartSidebarProduct'
 import { useSelector } from 'react-redux'
+import { calculateTotalPrice } from '../utils/utils'
 
 function Navbar() {
 	const { items, loading, error } = useSelector((state) => state.cart)
+	const totalPrice = calculateTotalPrice(items)
 
 	const [toggleValue, setToggleValue] = useState(false)
 	const [isOpenMenu, setIsOpenMenu] = useState(false)
@@ -131,14 +133,18 @@ function Navbar() {
 							<CartSidebarProduct key={product.id} product={product} />
 						))}
 
-					{items.length === 0 && <p className='text-center text-xl text-blue'> Your Cart is Empty :( </p>}
+					{items.length === 0 && (
+						<p className='text-center text-xl text-blue'>
+							Your Cart is Empty :(
+						</p>
+					)}
 				</div>
 
 				{/* Info */}
 				<div className='flex flex-col'>
 					<div className='flex-center-between'>
 						<p> Subtotal: </p>
-						<span className='text-gold text-lg'> $150 </span>
+						<span className='text-gold text-lg'> ${totalPrice} </span>
 					</div>
 
 					<div className='my-4 border-t-[1px] border-grayBorder'></div>

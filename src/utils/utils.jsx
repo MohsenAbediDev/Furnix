@@ -11,4 +11,13 @@ const ResetPageScroll = () => {
 	return null
 }
 
+export const calculateTotalPrice = (items) => {
+	return (
+		items?.reduce(
+			(total, item) => total + Number(item.price) * item.quantity,
+			0
+		) || 0
+	)
+}
+
 export default ResetPageScroll
