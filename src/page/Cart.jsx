@@ -1,8 +1,14 @@
+import { useSelector } from 'react-redux'
 import PageBanner from '../components/PageBanner'
 import InfoStrip from '../components/InfoStrip'
 import { FaTrash } from 'react-icons/fa'
 
 function Cart() {
+	const { items, loading, error } = useSelector((state) => state.cart)
+
+	let totalPrice = 0
+	items?.forEach((item) => (totalPrice += Number(item.price)))
+
 	return (
 		<>
 			{/* Banner */}
@@ -26,35 +32,37 @@ function Cart() {
 
 					{/* Products */}
 					<div className='flex flex-col gap-y-5 w-full mt-5'>
-						<div className='flex-center w-full h-24 px-2 py-2 border-b-[1px]'>
-							{/* Product image */}
-							<img
-								className='w-24 h-full sm:w-20 sm:h-20 rounded-md'
-								src='/images/image 1.png'
-							/>
+						{items?.map((product) => (
+							<div className='flex-center w-full h-24 px-2 py-2 border-b-[1px]'>
+								{/* Product image */}
+								<img
+									className='w-24 h-full sm:w-20 sm:h-20 rounded-md'
+									src={product.image}
+								/>
 
-							<div className='flex-center-between flex-grow w-full ml-4 sm:ml-2'>
-								{/* Product Name and Price */}
-								<div className='flex gap-x-16 sm:gap-x-4 font-semibold text-footerText'>
-									<p>Product</p>
-									<p>Price</p>
+								<div className='flex-center-between flex-grow w-full ml-4 sm:ml-2'>
+									{/* Product Name and Price */}
+									<div className='flex gap-x-16 sm:gap-x-4 font-semibold text-footerText'>
+										<p>{product.name}</p>
+										<p>{product.price}</p>
+									</div>
+
+									{/* Product Quantity and Subtotal */}
+									<div className='flex-center gap-x-16 sm:gap-x-7 ml-8 font-semibold'>
+										<input
+											type='number'
+											className='w-7 h-7 sm:w-6 border-[1px] border-grayBorder outline-none text-center rounded-sm'
+											min={1}
+											defaultValue={product.quantity}
+										/>
+										<span>${product.price}</span>
+									</div>
+
+									{/* Remove Product */}
+									<FaTrash className='text-xl sm:text text-gold cursor-pointer' />
 								</div>
-
-								{/* Product Quantity and Subtotal */}
-								<div className='flex-center gap-x-16 sm:gap-x-7 ml-8 font-semibold'>
-									<input
-										type='number'
-										className='w-7 h-7 sm:w-6 border-[1px] border-grayBorder outline-none text-center rounded-sm'
-										min={1}
-										defaultValue={1}
-									/>
-									<span>$150</span>
-								</div>
-
-								{/* Remove Product */}
-								<FaTrash className='text-xl sm:text text-gold cursor-pointer' />
 							</div>
-						</div>
+						))}
 					</div>
 				</div>
 
@@ -68,14 +76,14 @@ function Cart() {
 						<div className='flex-center-between w-4/5'>
 							<p className='font-semibold text-sm'>Subtotal:</p>
 
-							<span className='text-footerText text-xs'> $150 </span>
+							<span className='text-footerText text-xs'> ${totalPrice} </span>
 						</div>
 
 						{/* Total */}
 						<div className='flex-center-between w-4/5'>
 							<p className='font-semibold'>Total:</p>
 
-							<span className='text-gold text-lg'> $150 </span>
+							<span className='text-gold text-lg'> ${totalPrice} </span>
 						</div>
 					</div>
 
