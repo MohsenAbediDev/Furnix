@@ -3,90 +3,131 @@
     {
       "id": "1",
       "image": "/images/image 1.png",
-      "name": "Syltherine",
-      "category": "Stylish cafe chair",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "name": "Modern Cafe Chair",
+      "category": "Stylish Cafe Chair",
+      "description": "A sleek and modern cafe chair with a minimalist design, perfect for contemporary spaces. Made from high-quality wood and metal for durability.",
       "rating": "4.5",
       "price": "100",
-      "sizes": ["L", "XL", "XS"],
-      "colors": ["white"]
+      "sizes": [
+        "L",
+        "XL",
+        "XS"
+      ],
+      "colors": [
+        "white"
+      ]
     },
     {
       "id": "2",
       "image": "/images/image 2.png",
-      "name": "Leviosa",
-      "category": "Stylish cafe chair",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", 
+      "name": "Elegant Dining Chair",
+      "category": "Stylish Cafe Chair",
+      "description": "An elegant dining chair with a cushioned seat and ergonomic design for maximum comfort. Ideal for home and restaurant use.",
       "rating": "4.5",
       "price": "90",
-      "sizes": ["L", "XL", "XS"],
-      "colors": ["white"]
+      "sizes": [
+        "L",
+        "XL",
+        "XS"
+      ],
+      "colors": [
+        "white"
+      ]
     },
     {
       "id": "3",
       "image": "/images/image 3.png",
-      "name": "Lolito",
-      "category": "Luxory big sofa",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "name": "Luxury Sofa Set",
+      "category": "Luxury Sofa",
+      "description": "A spacious and comfortable luxury sofa with premium fabric upholstery. Perfect for modern living rooms.",
       "rating": "4.5",
       "price": "100",
-      "sizes": ["L", "XS"],
-      "colors": ["white"]
+      "sizes": [
+        "L",
+        "XS"
+      ],
+      "colors": [
+        "white"
+      ]
     },
     {
       "id": "4",
       "image": "/images/image 4.png",
-      "name": "Respira",
-      "category": "Outdoor bar table and stool",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "name": "Bar Table Set",
+      "category": "Outdoor Furniture",
+      "description": "A stylish outdoor bar table and stool set, perfect for patios and balconies. Weather-resistant and durable.",
       "rating": "4.5",
       "price": "100",
-      "sizes": ["L", "XL"],
-      "colors": ["white"]
+      "sizes": [
+        "L",
+        "XL"
+      ],
+      "colors": [
+        "white"
+      ]
     },
     {
       "id": "5",
       "image": "/images/image 9.png",
-      "name": "Night lamp",
-      "category": "Stylish cafe chair",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "name": "Night Lamp",
+      "category": "Lighting",
+      "description": "A sleek and minimalist night lamp with warm LED lighting, perfect for bedside tables.",
       "rating": "4.5",
       "price": "100",
-      "sizes": ["L"],
-      "colors": ["white"]
+      "sizes": [
+        "L"
+      ],
+      "colors": [
+        "white"
+      ]
     },
     {
       "id": "6",
       "image": "/images/image 10.png",
-      "name": "Muggo",
-      "category": "Small mug",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "name": "Coffee Mug",
+      "category": "Drinkware",
+      "description": "A high-quality ceramic coffee mug with a smooth finish, ideal for everyday use.",
       "rating": "4.5",
       "price": "30",
-      "sizes": ["L"],
-      "colors": ["white"]
+      "sizes": [
+        "L"
+      ],
+      "colors": [
+        "white"
+      ]
     },
     {
       "id": "7",
       "image": "/images/image 11.png",
-      "name": "Pinky",
-      "category": "Cute bed set",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "name": "Cozy Bed Set",
+      "category": "Bedding",
+      "description": "A soft and cozy bed set with premium cotton fabric. Includes sheets, pillowcases, and a duvet cover.",
       "rating": "4.5",
       "price": "145",
-      "sizes": ["XL", "XS"],
-      "colors": ["pink"]
+      "sizes": [
+        "XL",
+        "XS"
+      ],
+      "colors": [
+        "pink"
+      ]
     },
     {
       "id": "8",
       "image": "/images/image 12.png",
-      "name": "Potty",
-      "category": "Minimalist flower pot",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      "name": "Modern Flower Pot",
+      "category": "Home Decor",
+      "description": "A minimalist flower pot with a contemporary design, perfect for indoor plants and succulents.",
       "rating": "4.5",
       "price": "40",
-      "sizes": ["L", "XL", "XS"],
-      "colors": ["white"]
+      "sizes": [
+        "L",
+        "XL",
+        "XS"
+      ],
+      "colors": [
+        "white"
+      ]
     }
   ]
 }
