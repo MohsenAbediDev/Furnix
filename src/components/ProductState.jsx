@@ -1,24 +1,54 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { fetchProducts } from '../store/products/productsSlice'
 import { FaStar } from 'react-icons/fa'
 import { FaStarHalf } from 'react-icons/fa'
 import ProductCard from './ProductCard'
 import { Link, useParams } from 'react-router-dom'
+import { addToCart as addToCartReducer } from '../store/cart/cartSlice'
 
 export default function ProductState() {
+	// Initialize the Redux dispatch function
 	const dispatch = useDispatch()
+
+	// Get the product ID from the URL parameters
 	const productId = useParams().id
+
+	// Extract product-related state from the Redux store
 	const { items, loading, error } = useSelector((state) => state.products)
 
+	// Retrieve cart items from localStorage
+	const cartItems = JSON.parse(localStorage.getItem('cart'))
+
+	// Get the quantity of the product if it's already in the cart
+	const cartProduct = cartItems?.find((item) => item.id === productId)
+	const [quantity, setQuantity] = useState(
+		cartProduct ? cartProduct.quantity : 1
+	)
+
+	// Find the selected product from the list of fetched products
 	const filteredProduct =
 		items.filter((product) => product.id === productId)[0] || {}
 
+	// Function to add the product to the cart
+	const addToCart = () => {
+		const newProduct = { ...filteredProduct, quantity: quantity }
+		dispatch(addToCartReducer(newProduct))
+	}
+
+	// Fetch products when the component mounts if the product list is empty
 	useEffect(() => {
 		if (items.length === 0) {
 			dispatch(fetchProducts())
 		}
 	}, [dispatch, items.length])
+
+	// Update the cart in Redux when the quantity changes
+	useEffect(() => {
+		if (cartProduct && filteredProduct?.id) {
+			dispatch(addToCartReducer({ ...filteredProduct, quantity }))
+		}
+	}, [quantity, cartProduct?.quantity, filteredProduct?.id])
 
 	// Show Skeleton animation
 	if (loading) {
@@ -224,17 +254,25 @@ export default function ProductState() {
 
 						<div className='flex gap-x-4 my-6'>
 							<div className='w-32 md:w-24 h-14 border-[1px] border-footerText rounded-lg flex justify-around'>
-								<button className='w-1/3 flex-center'>-</button>
-								<div className='w-1/3 flex-center text-xl'>1</div>
-								<button className='w-1/3 flex-center'>+</button>
+								<button
+									className='w-1/3 flex-center'
+									onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}>
+									-
+								</button>
+
+								<div className='w-1/3 flex-center text-xl'>{quantity}</div>
+
+								<button
+									className='w-1/3 flex-center'
+									onClick={() => setQuantity((prev) => prev + 1)}>
+									+
+								</button>
 							</div>
 
-							<button className='w-44 md:w-32 h-14 border-[1px] border-black rounded-lg flex justify-around text-xl flex-center'>
+							<button
+								className='w-44 md:w-32 h-14 border-[1px] border-black rounded-lg flex justify-around text-xl flex-center'
+								onClick={addToCart}>
 								Add To Cart
-							</button>
-
-							<button className='w-44 md:w-32 h-14 border-[1px] border-black rounded-lg flex justify-around text-xl flex-center'>
-								+ Compare
 							</button>
 						</div>
 					</div>
