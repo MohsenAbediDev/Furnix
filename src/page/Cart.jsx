@@ -1,14 +1,20 @@
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import PageBanner from '../components/PageBanner'
 import InfoStrip from '../components/InfoStrip'
 import { FaTrash } from 'react-icons/fa'
 import { calculateTotalPrice } from '../utils/utils'
+import { removeProduct } from '../store/cart/cartSlice'
 
 function Cart() {
+	const dispatch = useDispatch()
 	const { items, loading, error } = useSelector((state) => state.cart)
 
 	const totalPrice = calculateTotalPrice(items)
-	
+
+	const removeProductFromCart = (id) => {
+		dispatch(removeProduct(id))
+	}
+
 	return (
 		<>
 			{/* Banner */}
@@ -33,7 +39,9 @@ function Cart() {
 					{/* Products */}
 					<div className='flex flex-col gap-y-5 w-full mt-5'>
 						{items?.map((product) => (
-							<div className='flex-center w-full h-24 px-2 py-2 border-b-[1px]'>
+							<div
+								key={product.id}
+								className='flex-center w-full h-24 px-2 py-2 border-b-[1px]'>
 								{/* Product image */}
 								<img
 									className='w-24 h-full sm:w-20 sm:h-20 rounded-md'
@@ -59,7 +67,10 @@ function Cart() {
 									</div>
 
 									{/* Remove Product */}
-									<FaTrash className='text-xl sm:text text-gold cursor-pointer' />
+									<FaTrash
+										className='text-xl sm:text text-gold cursor-pointer'
+										onClick={() => removeProductFromCart(product.id)}
+									/>
 								</div>
 							</div>
 						))}
