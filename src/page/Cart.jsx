@@ -74,6 +74,12 @@ function Cart() {
 								</div>
 							</div>
 						))}
+
+						{items.length === 0 && (
+							<p className='text-black text-2xl text-center mt-2'>
+								Your Cart is Empty
+							</p>
+						)}
 					</div>
 				</div>
 
