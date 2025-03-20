@@ -1,6 +1,14 @@
 import { FaCircleXmark } from 'react-icons/fa6'
+import { useDispatch } from 'react-redux'
+import { removeProduct } from '../store/cart/cartSlice'
 
 function CartSidebarProduct({ product }) {
+	const dispatch = useDispatch()
+
+	const removeProductFromCart = (id) => {
+		dispatch(removeProduct(id))
+	}
+
 	return (
 		<div className='flex-center-between'>
 			<div className='flex'>
@@ -16,7 +24,10 @@ function CartSidebarProduct({ product }) {
 				</div>
 			</div>
 
-			<FaCircleXmark className='text-lg text-footerText cursor-pointer' />
+			<FaCircleXmark
+				className='text-lg text-footerText cursor-pointer'
+				onClick={() => removeProductFromCart(product.id)}
+			/>
 		</div>
 	)
 }
