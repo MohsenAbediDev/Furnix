@@ -29,14 +29,10 @@ const cartSlice = createSlice({
 
 		// Remove product from cart
 		removeProduct: (state, action) => {
-			const productsCart = JSON.parse(localStorage.getItem('cart'))
+			state.items = state.items.filter((item) => item.id !== action.payload)
 
-			const newProductsCart = productsCart.filter(
-				(item) => item.id != action.payload
-			)
-
-			// Update localStorage after each cart change
-			localStorage.setItem('cart', JSON.stringify(newProductsCart))
+			// Update localStorage after state change
+			localStorage.setItem('cart', JSON.stringify(state.items))
 		},
 	},
 })
