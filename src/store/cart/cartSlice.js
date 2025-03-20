@@ -11,6 +11,7 @@ const cartSlice = createSlice({
 	name: 'cart',
 	initialState,
 	reducers: {
+		// Add product to cart
 		addToCart: (state, action) => {
 			const existingItem = state.items.find(
 				(item) => item.id === action.payload.id
@@ -25,8 +26,20 @@ const cartSlice = createSlice({
 			// Update localStorage after each cart change
 			localStorage.setItem('cart', JSON.stringify(state.items))
 		},
+
+		// Remove product from cart
+		removeProduct: (state, action) => {
+			const productsCart = JSON.parse(localStorage.getItem('cart'))
+
+			const newProductsCart = productsCart.filter(
+				(item) => item.id != action.payload
+			)
+
+			// Update localStorage after each cart change
+			localStorage.setItem('cart', JSON.stringify(newProductsCart))
+		},
 	},
 })
 
-export const { addToCart } = cartSlice.actions
+export const { addToCart, removeProduct } = cartSlice.actions
 export default cartSlice.reducer
