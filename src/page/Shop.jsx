@@ -5,8 +5,8 @@ import InfoStrip from '../components/InfoStrip'
 import PaginationRounded from '../components/PaginationRounded'
 
 function Shop() {
-	const [resultCount, setResultCount] = useState(16)
-	const [sort, setSort] = useState('Default')
+	const [resultCount, setResultCount] = useState(8)
+	const [sort, setSort] = useState('default')
 
 	return (
 		<div>
@@ -30,7 +30,7 @@ function Shop() {
 						Showing
 						<span>1-{resultCount}</span>
 						of
-						<span>32</span>
+						<span>8</span>
 						results
 					</div>
 				</div>
@@ -44,17 +44,27 @@ function Shop() {
 							type='number'
 							className='bg-white w-7 h-7 outline-none text-center rounded-sm'
 							defaultValue={resultCount}
+							onChange={(e) => setResultCount(Number(e.target.value))}
 						/>
 						Sort by
-						<select className='outline-none p-1 cursor-pointer rounded-sm'>
-							<option>Default</option>
+						<select
+							className='outline-none p-1 cursor-pointer rounded-sm'
+							onChange={(e) => setSort(e.target.value)}>
+							<option value='default'>Default</option>
+							<option value='low_to_high'>Low to High</option>
+							<option value='high_to_low'>High to Low</option>
 						</select>
 					</div>
 				</div>
 			</div>
 
 			{/* Show products */}
-			<Products title='' usePagination={true} />
+			<Products
+				title=''
+				usePagination={true}
+				resultCount={resultCount}
+				sort={sort}
+			/>
 
 			{/* Use pagination */}
 			<PaginationRounded />

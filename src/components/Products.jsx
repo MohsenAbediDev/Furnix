@@ -1,12 +1,13 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import ProductCard from './ProductCard'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchProducts } from '../store/products/productsSlice'
 
-function Products({ title, usePagination }) {
+function Products({ title, usePagination, resultCount, sort }) {
 	const dispatch = useDispatch()
 	const { items, loading, error } = useSelector((state) => state.products)
+	const [sortItems, setSortItems] = useState('default')
 
 	useEffect(() => {
 		if (items.length === 0) {
@@ -14,7 +15,14 @@ function Products({ title, usePagination }) {
 		}
 	}, [dispatch, items.length])
 
-	if (error) return <p className='font-bold text-xl text-center mt-10'>Error! {error}</p>
+	const sortedItems = [...items].sort((a, b) => {
+		if (sort === 'low_to_high') return a.price - b.price
+		if (sort === 'high_to_low') return b.price - a.price
+		return 0
+	})
+
+	if (error)
+		return <p className='font-bold text-xl text-center mt-10'>Error! {error}</p>
 
 	if (loading) {
 		return (
@@ -60,8 +68,8 @@ function Products({ title, usePagination }) {
 
 				{/* Show products */}
 				<div className='grid grid-cols-4 sm:grid-cols-2 gap-5 sm:gap-x-5'>
-					{items &&
-						items.map((product) => (
+					{sortedItems &&
+						sortedItems.map((product) => (
 							<ProductCard key={product.id} product={product} />
 						))}
 				</div>
