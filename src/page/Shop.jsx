@@ -28,7 +28,7 @@ function Shop() {
 					{/* Results */}
 					<div className='flex-center sm:hidden gap-x-1 text-sm'>
 						Showing
-						<span>1-{resultCount}</span>
+						<span>{resultCount > 0 ? `1-${resultCount}` : '0'}</span>
 						of
 						<span>8</span>
 						results

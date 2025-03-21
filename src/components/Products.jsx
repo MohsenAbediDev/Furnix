@@ -69,9 +69,11 @@ function Products({ title, usePagination, resultCount, sort }) {
 				{/* Show products */}
 				<div className='grid grid-cols-4 sm:grid-cols-2 gap-5 sm:gap-x-5'>
 					{sortedItems &&
-						sortedItems.map((product) => (
-							<ProductCard key={product.id} product={product} />
-						))}
+						sortedItems
+							.slice(0, resultCount)
+							.map((product) => (
+								<ProductCard key={product.id} product={product} />
+							))}
 				</div>
 
 				{/* Show pagination or show more button */}
