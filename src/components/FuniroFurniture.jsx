@@ -4,7 +4,7 @@ function FuniroFurniture() {
 			<div>
 				<div className='flex flex-col items-center font-semibold my-9'>
 					<p className='text-lg text-gray'>Share your setup with</p>
-					<p className='text-4xl'>#FuniroFurniture</p>
+					<p className='text-4xl'>#FurniroFurniture</p>
 				</div>
 
 				{/* Images */}
