@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import ProductCard from './ProductCard'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -7,7 +7,6 @@ import { fetchProducts } from '../store/products/productsSlice'
 function Products({ title, usePagination, resultCount, sort }) {
 	const dispatch = useDispatch()
 	const { items, loading, error } = useSelector((state) => state.products)
-	const [sortItems, setSortItems] = useState('default')
 
 	useEffect(() => {
 		if (items.length === 0) {
