@@ -1,19 +1,28 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { IoShareSocialOutline, IoHeartOutline } from 'react-icons/io5'
+import { IoShareSocialOutline, IoHeartOutline, IoHeart } from 'react-icons/io5'
 import { MdOutlineCompareArrows } from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart as addToCartReducer } from '../store/cart/cartSlice'
+import { toggleFavorite } from '../store/favorite/favoriteSlice'
 
 function ProductCard({ product }) {
 	const dispatch = useDispatch()
 	const { items, loading, error } = useSelector((state) => state.cart)
+	const favorites = useSelector((state) => state.favorite.favorites)
+	const isLiked = favorites.some((item) => item.id === product.id)
 
 	const addToCart = (e) => {
 		e.preventDefault()
 		const newProduct = { ...product, quantity: 1 }
 
 		dispatch(addToCartReducer(newProduct))
+	}
+
+	// Like product and set product on localStorage
+	const likeProduct = (e) => {
+		e.preventDefault()
+		dispatch(toggleFavorite(product))
 	}
 
 	useEffect(() => {
@@ -48,11 +57,19 @@ function ProductCard({ product }) {
 						<span className='flex-center gap-x-1 sm:text-xs'>
 							<IoShareSocialOutline className='text-xl sm:text-sm' /> Share
 						</span>
+
 						<span className='flex-center gap-x-1 sm:text-xs'>
 							<MdOutlineCompareArrows className='text-xl sm:text-sm' /> Compare
 						</span>
-						<span className='flex-center gap-x-1 sm:text-xs'>
-							<IoHeartOutline className='text-xl sm:text-sm' />
+
+						<span
+							className='flex-center gap-x-1 sm:text-xs'
+							onClick={(e) => likeProduct(e)}>
+							{isLiked ? (
+								<IoHeart className='text-xl sm:text-sm' />
+							) : (
+								<IoHeartOutline className='text-xl sm:text-sm' />
+							)}
 							Like
 						</span>
 					</div>
