@@ -3,8 +3,6 @@ import PageBanner from '../components/PageBanner'
 import Products from '../components/Products'
 import InfoStrip from '../components/InfoStrip'
 import PaginationRounded from '../components/PaginationRounded'
-import { useSelector } from 'react-redux'
-import FavoriteProducts from '../components/FavoriteProducts'
 
 function Favorite() {
 	const [resultCount, setResultCount] = useState(8)
@@ -61,7 +59,8 @@ function Favorite() {
 			</div>
 
 			{/* Show favorite products */}
-			<FavoriteProducts
+			<Products
+				isFavorite={true}
 				title=''
 				usePagination={true}
 				resultCount={resultCount}

@@ -4,9 +4,17 @@ import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchProducts } from '../store/products/productsSlice'
 
-function Products({ title, usePagination, resultCount, sort }) {
+function Products({ isFavorite, title, usePagination, resultCount, sort }) {
 	const dispatch = useDispatch()
-	const { items, loading, error } = useSelector((state) => state.products)
+
+	const favorites = useSelector((state) => state.favorite.favorites)
+	const {
+		items: productItems,
+		loading,
+		error,
+	} = useSelector((state) => state.products)
+
+	const items = isFavorite ? favorites : productItems
 
 	useEffect(() => {
 		if (items.length === 0) {
@@ -30,19 +38,13 @@ function Products({ title, usePagination, resultCount, sort }) {
 					className={`w-10/12 sm:w-11/12 flex-center-start flex-col ${
 						!title && 'mt-8'
 					}`}>
-					{/* Show title */}
 					{title && <p className='my-12 text-3xl font-semibold'>{title}</p>}
-
-					{/* Show products */}
 					<div className='grid grid-cols-4 sm:grid-cols-2 gap-5 sm:gap-x-5'>
 						{[...Array(8)].map((_, i) => (
 							<div
 								key={i}
 								className='w-[245px] sm:w-[190px] h-[383px] sm:h-[350px] bg-card relative overflow-hidden rounded-lg flex flex-col'>
-								{/* Product Image */}
 								<div className='w-full h-[250px] sm:h-[200px] bg-skeleton animate-pulse rounded-t-lg'></div>
-
-								{/* Product Information */}
 								<div className='w-full p-4 flex flex-col gap-y-3'>
 									<div className='w-3/4 h-6 bg-skeleton animate-pulse rounded-md'></div>
 									<div className='w-1/2 h-5 bg-skeleton animate-pulse rounded-md'></div>

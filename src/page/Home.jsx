@@ -9,6 +9,7 @@ export default function Home() {
 			<Header />
 			<Range />
 			<Products
+				isFavorite={false}
 				title='Our Product'
 				usePagination={false}
 				resultCount={8}

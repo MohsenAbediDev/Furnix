@@ -60,6 +60,7 @@ function Shop() {
 
 			{/* Show products */}
 			<Products
+				isFavorite={false}
 				title=''
 				usePagination={true}
 				resultCount={resultCount}
