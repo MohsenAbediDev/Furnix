@@ -20,46 +20,46 @@ function Cart() {
 			{/* Banner */}
 			<PageBanner />
 
-			<div className='flex-start-between sm:flex-col w-10/12 md:w-full sm:w-full gap-x-8 sm:gap-x-0 mx-auto p-20 md:p-5 sm:p-0'>
-				{/* Product Inforamtion */}
+			<div className='flex-start-between sm:flex-col w-9/12 md:w-full sm:w-full gap-x-6 sm:gap-x-0 mx-auto p-10 md:p-4 sm:p-2'>
+				{/* Product Information */}
 				<div className='flex-center flex-col w-full'>
 					{/* Information bar */}
-					<div className='flex-center-between w-full bg-primary py-2 px-24 rounded-sm sm:px-4 sm:text-xs'>
-						<div className='flex-center gap-x-16 sm:gap-x-7 font-semibold sm:ml-[72px]'>
+					<div className='flex-center-between w-full bg-primary py-1.5 px-20 rounded-sm sm:px-3 text-xs'>
+						<div className='flex-center gap-x-16 sm:gap-x-5 font-semibold sm:ml-[60px]'>
 							<p> Product </p>
 							<p> Price </p>
 						</div>
 
-						<div className='flex-center gap-x-6 sm:gap-x-4 sm:mr-6 font-semibold'>
+						<div className='flex-center gap-x-8 sm:gap-x-3 sm:mr-1 font-semibold'>
 							<p> Quantity </p>
 							<p> Subtotal </p>
 						</div>
 					</div>
 
 					{/* Products */}
-					<div className='flex flex-col gap-y-5 w-full mt-5'>
+					<div className='flex flex-col gap-y-4 w-full mt-4'>
 						{items?.map((product) => (
 							<div
 								key={product.id}
-								className='flex-center w-full h-24 px-2 py-2 border-b-[1px]'>
+								className='flex-center w-full h-20 px-2 py-1.5 border-b'>
 								{/* Product image */}
 								<img
-									className='w-24 h-full sm:w-20 sm:h-20 rounded-md'
+									className='w-16 h-16 sm:w-16 sm:h-16 rounded-md'
 									src={product.image}
 								/>
 
-								<div className='flex-center-between flex-grow w-full ml-4 sm:ml-2'>
+								<div className='flex-center-between flex-grow w-full ml-3 sm:ml-1.5'>
 									{/* Product Name and Price */}
-									<div className='flex gap-x-16 sm:gap-x-4 font-semibold text-footerText'>
+									<div className='flex max-w-32 gap-x-16 sm:gap-x-3.5 text-sm font-semibold text-footerText'>
 										<p>{product.name}</p>
 										<p>{product.price}</p>
 									</div>
 
 									{/* Product Quantity and Subtotal */}
-									<div className='flex-center gap-x-16 sm:gap-x-7 ml-8 font-semibold'>
+									<div className='flex-center gap-x-14 sm:gap-x-6 ml-24 sm:ml-10 text-sm font-semibold'>
 										<input
 											type='number'
-											className='w-7 h-7 sm:w-6 border-[1px] border-grayBorder outline-none text-center rounded-sm'
+											className='w-6 h-6 sm:w-5 border border-grayBorder outline-none text-center rounded-sm'
 											min={1}
 											defaultValue={product.quantity}
 										/>
@@ -68,7 +68,7 @@ function Cart() {
 
 									{/* Remove Product */}
 									<FaTrash
-										className='text-xl sm:text text-gold cursor-pointer'
+										className='text-lg sm:text-sm text-gold cursor-pointer'
 										onClick={() => removeProductFromCart(product.id)}
 									/>
 								</div>
@@ -76,7 +76,7 @@ function Cart() {
 						))}
 
 						{items.length === 0 && (
-							<p className='text-black text-2xl text-center mt-2'>
+							<p className='text-black text-xl text-center mt-2'>
 								Your Cart is Empty
 							</p>
 						)}
@@ -84,27 +84,27 @@ function Cart() {
 				</div>
 
 				{/* Cart totals */}
-				<div className='flex-center flex-col w-96 sm:w-full gap-y-8 p-10 sm:mt-10 bg-primary rounded-sm'>
-					<p className='text-2xl font-bold'> Cart Totals </p>
+				<div className='flex-center flex-col w-80 sm:w-full gap-y-6 p-8 sm:mt-8 bg-primary rounded-sm'>
+					<p className='text-xl font-bold'> Cart Totals </p>
 
 					{/* Details */}
-					<div className='flex-center flex-col w-full gap-y-5'>
+					<div className='flex-center flex-col w-full gap-y-4'>
 						{/* SubTotal */}
 						<div className='flex-center-between w-4/5'>
-							<p className='font-semibold text-sm'>Subtotal:</p>
+							<p className='font-semibold text-xs'>Subtotal:</p>
 
 							<span className='text-footerText text-xs'> ${totalPrice} </span>
 						</div>
 
 						{/* Total */}
 						<div className='flex-center-between w-4/5'>
-							<p className='font-semibold'>Total:</p>
+							<p className='font-semibold text-sm'>Total:</p>
 
-							<span className='text-gold text-lg'> ${totalPrice} </span>
+							<span className='text-gold text-base'> ${totalPrice} </span>
 						</div>
 					</div>
 
-					<button className='w-44 border-[1px] p-3 rounded-xl'>
+					<button className='w-40 border p-2 rounded-lg'>
 						Check Out
 					</button>
 				</div>
