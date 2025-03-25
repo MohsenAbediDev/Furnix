@@ -1,5 +1,5 @@
-import { useState, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useRef, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { IoMdMenu } from 'react-icons/io'
 import { IoHomeOutline } from 'react-icons/io5'
 import { MdOutlineShoppingBag, MdOutlineContactPage } from 'react-icons/md'
@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux'
 import { calculateTotalPrice } from '../utils/utils'
 
 function Navbar() {
-	const { items, loading, error } = useSelector((state) => state.cart)
+	const { items } = useSelector((state) => state.cart)
 	const totalPrice = calculateTotalPrice(items)
 
 	const [toggleValue, setToggleValue] = useState(false)
@@ -18,6 +18,8 @@ function Navbar() {
 	const cartSidebar = useRef()
 	const menuSidebar = useRef()
 	const overlay = useRef()
+
+	const location = useLocation()
 
 	const showCartSidebar = () => {
 		setToggleValue(!toggleValue)
@@ -38,6 +40,13 @@ function Navbar() {
 			overlay.current.classList.add('hide')
 		}
 	}
+
+	// Use useEffect to close the menu when the route changes
+	useEffect(() => {
+		if (isOpenMenu) {
+			showMenu() // Close the menu when route changes
+		}
+	}, [location]) // Depend on location to trigger the effect when the route changes
 
 	const showMenu = () => {
 		setIsOpenMenu(!isOpenMenu)
