@@ -52,17 +52,17 @@ function Navbar() {
 	}
 
 	return (
-		<div className='fixed top-0 left-0 w-full h-16 bg-white px-10 sm:px-2 flex-center-between z-30'>
+		<div className='fixed top-0 left-0 w-full h-14 bg-white px-9 sm:px-2 flex-center-between z-30'>
 			{/* Logo */}
 			<div className='flex-center-start gap-x-2'>
 				{/* Menu Icon for Mobile */}
 				<IoMdMenu
-					className='hidden sm:flex text-3xl cursor-pointer'
+					className='hidden sm:flex text-2xl cursor-pointer'
 					onClick={showMenu}
 				/>
 				<Link to='/' className='flex-center'>
 					<img className='w-8 h-6' src='/images/Logo.png' alt='Furniro' />
-					<span className='font-montserrat font-bold text-2xl'>FURNIRO</span>
+					<span className='font-montserrat font-bold text-xl'>FURNIRO</span>
 				</Link>
 			</div>
 
@@ -75,7 +75,7 @@ function Navbar() {
 			</div>
 
 			{/* Action routes */}
-			<div className='flex-center  gap-x-6'>
+			<div className='flex-center gap-x-5'>
 				<Link to='/user' className='w-5'>
 					<img src='/icons/User.png' />
 				</Link>
@@ -96,7 +96,7 @@ function Navbar() {
 			{/* Menu Sidebar for Mobile */}
 			<div
 				ref={menuSidebar}
-				className='hidden sm:flex flex-col gap-5 py-5 px-2 absolute w-2/4 h-screen z-50 top-16 left-0 bg-white transition-all hide-menu'>
+				className='hidden sm:flex flex-col gap-5 py-5 px-2 absolute w-2/4 h-screen z-50 top-14 left-0 bg-white transition-all hide-menu'>
 				<Link to='/' className='menu'>
 					<IoHomeOutline />
 					Home
@@ -105,20 +105,20 @@ function Navbar() {
 					<MdOutlineShoppingBag />
 					Shop
 				</Link>
+				<Link to='/about' className='menu'>
+					<MdOutlineContactPage />
+					About
+				</Link>
 				<Link to='/cart' className='menu'>
 					<LuShoppingCart />
 					Cart
-				</Link>
-				<Link to='/contact' className='menu'>
-					<MdOutlineContactPage />
-					Contact
 				</Link>
 			</div>
 
 			{/* Cart Sidebar */}
 			<div
 				ref={cartSidebar}
-				className='absolute top-0 right-0 bg-white w-80 h-[500px] px-5 pt-5 pb-2 z-50 rounded-bl-md transition-all hide'>
+				className='absolute top-0 right-0 bg-white w-72 h-[450px] px-5 pt-5 pb-2 z-50 rounded-bl-md transition-all hide'>
 				{/* Title */}
 				<div className='flex-center-between'>
 					<p className='font-bold text-xl'>Shopping Cart</p>
@@ -126,7 +126,7 @@ function Navbar() {
 				</div>
 
 				{/* Products Section */}
-				<div className='flex flex-col custom-scrollbar-y my-5 pt-5 gap-y-9 border-t-[1px] border-grayBorder h-[300px]'>
+				<div className='flex flex-col custom-scrollbar-y my-5 pt-5 gap-y-9 border-t-[1px] border-grayBorder h-[270px]'>
 					{/* Products  */}
 					{items &&
 						items.map((product) => (
