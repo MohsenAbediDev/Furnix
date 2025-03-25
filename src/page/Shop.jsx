@@ -14,9 +14,9 @@ function Shop() {
 			<PageBanner />
 
 			{/* Filter and Display Bar */}
-			<div className='bg-primary h-16 px-32 sm:px-4 flex-center-between '>
+			<div className='bg-primary h-14 px-28 sm:px-4 flex-center-between'>
 				{/* Filter section */}
-				<div className='flex-center gap-x-3 '>
+				<div className='flex-center gap-x-2'>
 					{/* Filter */}
 					<img src='/icons/FilterSetting.png' className='cursor-pointer' />
 					<span className='font-semibold cursor-pointer'>Filter</span>
@@ -36,19 +36,19 @@ function Shop() {
 				</div>
 
 				{/* Display section */}
-				<div className='flex-center gap-x-3'>
+				<div className='flex-center gap-x-2'>
 					{/* Filter */}
 					<div className='flex-center gap-x-2 text-sm'>
 						Show
 						<input
 							type='number'
-							className='bg-white w-7 h-7 outline-none text-center rounded-sm'
+							className='bg-white w-6 h-6 outline-none text-center rounded-sm'
 							defaultValue={resultCount}
 							onChange={(e) => setResultCount(Number(e.target.value))}
 						/>
 						Sort by
 						<select
-							className='outline-none p-1 cursor-pointer rounded-sm'
+							className='outline-none p-[3px] cursor-pointer rounded-sm'
 							onChange={(e) => setSort(e.target.value)}>
 							<option value='default'>Default</option>
 							<option value='low_to_high'>Low to High</option>
