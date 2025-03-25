@@ -118,7 +118,7 @@ function Navbar() {
 			{/* Cart Sidebar */}
 			<div
 				ref={cartSidebar}
-				className='absolute top-0 right-0 bg-white w-72 h-[450px] px-5 pt-5 pb-2 z-50 rounded-bl-md transition-all hide'>
+				className='absolute top-0 right-0 bg-white w-80 h-[500px] px-5 pt-5 pb-2 z-50 rounded-bl-md transition-all hide'>
 				{/* Title */}
 				<div className='flex-center-between'>
 					<p className='font-bold text-xl'>Shopping Cart</p>
@@ -126,8 +126,8 @@ function Navbar() {
 				</div>
 
 				{/* Products Section */}
-				<div className='flex flex-col custom-scrollbar-y my-5 pt-5 gap-y-9 border-t-[1px] border-grayBorder h-[270px]'>
-					{/* Products  */}
+				<div className='flex flex-col custom-scrollbar-y my-5 pt-5 gap-y-9 border-t-[1px] border-grayBorder h-[300px]'>
+					{/* Products */}
 					{items &&
 						items.map((product) => (
 							<CartSidebarProduct key={product.id} product={product} />
