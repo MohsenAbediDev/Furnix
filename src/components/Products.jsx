@@ -29,26 +29,26 @@ function Products({ isFavorite, title, usePagination, resultCount, sort }) {
 	})
 
 	if (error)
-		return <p className='font-bold text-xl text-center mt-10'>Error! {error}</p>
+		return <p className='font-bold text-lg text-center mt-8'>Error! {error}</p>
 
 	if (loading) {
 		return (
 			<section className='flex-start-center'>
 				<div
-					className={`w-10/12 sm:w-11/12 flex-center-start flex-col ${
-						!title && 'mt-8'
+					className={`w-9/12 sm:w-10/12 flex-center-start flex-col ${
+						!title && 'mt-6'
 					}`}>
-					{title && <p className='my-12 text-3xl font-semibold'>{title}</p>}
-					<div className='grid grid-cols-4 sm:grid-cols-2 gap-5 sm:gap-x-5'>
+					{title && <p className='my-10 text-2xl font-semibold'>{title}</p>}
+					<div className='grid grid-cols-4 sm:grid-cols-2 gap-4 sm:gap-x-4'>
 						{[...Array(8)].map((_, i) => (
 							<div
 								key={i}
-								className='w-[245px] sm:w-[190px] h-[383px] sm:h-[350px] bg-card relative overflow-hidden rounded-lg flex flex-col'>
-								<div className='w-full h-[250px] sm:h-[200px] bg-skeleton animate-pulse rounded-t-lg'></div>
-								<div className='w-full p-4 flex flex-col gap-y-3'>
-									<div className='w-3/4 h-6 bg-skeleton animate-pulse rounded-md'></div>
-									<div className='w-1/2 h-5 bg-skeleton animate-pulse rounded-md'></div>
-									<div className='w-1/4 h-6 bg-skeleton animate-pulse rounded-md'></div>
+								className='w-[220px] sm:w-[170px] h-[345px] sm:h-[315px] bg-card relative overflow-hidden rounded-md flex flex-col'>
+								<div className='w-full h-[225px] sm:h-[180px] bg-skeleton animate-pulse rounded-t-md'></div>
+								<div className='w-full p-3 flex flex-col gap-y-2'>
+									<div className='w-2/3 h-5 bg-skeleton animate-pulse rounded'></div>
+									<div className='w-1/3 h-4 bg-skeleton animate-pulse rounded'></div>
+									<div className='w-1/5 h-5 bg-skeleton animate-pulse rounded'></div>
 								</div>
 							</div>
 						))}
@@ -65,7 +65,7 @@ function Products({ isFavorite, title, usePagination, resultCount, sort }) {
 					!title && 'mt-8'
 				}`}>
 				{/* Show title */}
-				{title && <p className='my-12 text-3xl font-semibold'>{title} </p>}
+				{title && <p className='my-10 text-2xl font-semibold'>{title} </p>}
 
 				{/* Show products */}
 				<div className='grid grid-cols-4 sm:grid-cols-2 gap-5 sm:gap-x-5'>
@@ -83,7 +83,7 @@ function Products({ isFavorite, title, usePagination, resultCount, sort }) {
 				) : (
 					<Link
 						to='/shop'
-						className='border-gold border-2 text-base text-gold px-14 py-2 my-7 hover:bg-gold hover:text-white duration-200'>
+						className='border-gold border text-sm text-gold px-12 py-1.5 my-6 hover:bg-gold hover:text-white duration-200 rounded-md'>
 						Show More
 					</Link>
 				)}
