@@ -32,11 +32,13 @@ function Cart() {
 
 	// Show Alert
 	const ShowAlert = () => {
-		Swal.fire(modalConfig).then((result) => {
-			if (result.isConfirmed) {
-				dispatch(clearCart())
-			}
-		})
+		if (items.length !== 0) {
+			Swal.fire(modalConfig).then((result) => {
+				if (result.isConfirmed) {
+					dispatch(clearCart())
+				}
+			})
+		}
 	}
 
 	if (location.search == '?checkout') {
