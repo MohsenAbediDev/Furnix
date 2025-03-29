@@ -5,10 +5,13 @@ import { IoHomeOutline } from 'react-icons/io5'
 import { MdOutlineShoppingBag, MdOutlineContactPage } from 'react-icons/md'
 import { LuShoppingCart } from 'react-icons/lu'
 import CartSidebarProduct from './CartSidebarProduct'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { calculateTotalPrice } from '../utils/utils'
+import { clearCart } from '../store/cart/cartSlice'
 
 function Navbar() {
+	const dispatch = useDispatch()
+
 	const { items } = useSelector((state) => state.cart)
 	const totalPrice = calculateTotalPrice(items)
 
@@ -39,6 +42,11 @@ function Navbar() {
 			overlay.current.classList.remove('show')
 			overlay.current.classList.add('hide')
 		}
+	}
+
+	// Clear Cart
+	const clearCartHandler = () => {
+		dispatch(clearCart())
 	}
 
 	// Use useEffect to close the menu when the route changes
@@ -131,7 +139,7 @@ function Navbar() {
 				{/* Title */}
 				<div className='flex-center-between'>
 					<p className='font-bold text-xl'>Shopping Cart</p>
-					<img className='cursor-pointer' src='/icons/Cart-Clear.png' />
+					<img className='cursor-pointer' src='/icons/Cart-Clear.png' onClick={clearCartHandler}/>
 				</div>
 
 				{/* Products Section */}
