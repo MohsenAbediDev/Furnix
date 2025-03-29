@@ -4,6 +4,7 @@ import InfoStrip from '../components/InfoStrip'
 import { FaTrash } from 'react-icons/fa'
 import { calculateTotalPrice } from '../utils/utils'
 import { removeProduct } from '../store/cart/cartSlice'
+import Swal from 'sweetalert2'
 
 function Cart() {
 	const dispatch = useDispatch()
@@ -11,8 +12,28 @@ function Cart() {
 
 	const totalPrice = calculateTotalPrice(items)
 
+	const modalConfig = {
+		title: 'Confirm Purchase',
+		text: 'Are you sure you want to complete your purchase?',
+		icon: 'warning',
+		confirmButtonText: 'Yes, Buy Now',
+		confirmButtonColor: '#28a745',
+		showCancelButton: true,
+		cancelButtonText: 'Cancel',
+		cancelButtonColor: '#d33',
+	}
+
 	const removeProductFromCart = (id) => {
 		dispatch(removeProduct(id))
+	}
+
+	// Show Alert
+	const ShowAlert = () => {
+		Swal.fire(modalConfig).then((result) => {
+			if (result.isConfirmed) {
+				console.log('Purchase completed!')
+			}
+		})
 	}
 
 	return (
@@ -104,7 +125,7 @@ function Cart() {
 						</div>
 					</div>
 
-					<button className='w-40 border p-2 rounded-lg'>
+					<button className='w-40 border p-2 rounded-lg' onClick={ShowAlert}>
 						Check Out
 					</button>
 				</div>
