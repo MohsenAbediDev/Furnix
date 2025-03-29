@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux'
+import { useLocation } from 'react-router-dom'
 import PageBanner from '../components/PageBanner'
 import InfoStrip from '../components/InfoStrip'
 import { FaTrash } from 'react-icons/fa'
@@ -11,6 +12,8 @@ function Cart() {
 	const { items, loading, error } = useSelector((state) => state.cart)
 
 	const totalPrice = calculateTotalPrice(items)
+
+	const location = useLocation()
 
 	const modalConfig = {
 		title: 'Confirm Purchase',
@@ -34,6 +37,10 @@ function Cart() {
 				dispatch(clearCart())
 			}
 		})
+	}
+
+	if (location.search == '?checkout') {
+		ShowAlert()
 	}
 
 	return (

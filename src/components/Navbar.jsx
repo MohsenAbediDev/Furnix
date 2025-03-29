@@ -139,7 +139,11 @@ function Navbar() {
 				{/* Title */}
 				<div className='flex-center-between'>
 					<p className='font-bold text-xl'>Shopping Cart</p>
-					<img className='cursor-pointer' src='/icons/Cart-Clear.png' onClick={clearCartHandler}/>
+					<img
+						className='cursor-pointer'
+						src='/icons/Cart-Clear.png'
+						onClick={clearCartHandler}
+					/>
 				</div>
 
 				{/* Products Section */}
@@ -175,7 +179,7 @@ function Navbar() {
 						</Link>
 
 						<Link
-							to='/checkout'
+							to='/cart?checkout'
 							onClick={showCartSidebar}
 							className='py-2 px-10 border-[1px] rounded-full'>
 							Checkout
