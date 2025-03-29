@@ -3,7 +3,7 @@ import PageBanner from '../components/PageBanner'
 import InfoStrip from '../components/InfoStrip'
 import { FaTrash } from 'react-icons/fa'
 import { calculateTotalPrice } from '../utils/utils'
-import { removeProduct } from '../store/cart/cartSlice'
+import { removeProduct, clearCart } from '../store/cart/cartSlice'
 import Swal from 'sweetalert2'
 
 function Cart() {
@@ -31,7 +31,7 @@ function Cart() {
 	const ShowAlert = () => {
 		Swal.fire(modalConfig).then((result) => {
 			if (result.isConfirmed) {
-				console.log('Purchase completed!')
+				dispatch(clearCart())
 			}
 		})
 	}
