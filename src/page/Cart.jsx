@@ -5,7 +5,11 @@ import PageBanner from '../components/PageBanner'
 import InfoStrip from '../components/InfoStrip'
 import { FaTrash } from 'react-icons/fa'
 import { calculateTotalPrice } from '../utils/utils'
-import { removeProduct, clearCart, updateQuantity } from '../store/cart/cartSlice'
+import {
+	removeProduct,
+	clearCart,
+	updateQuantity,
+} from '../store/cart/cartSlice'
 import Swal from 'sweetalert2'
 
 function Cart() {
@@ -101,20 +105,53 @@ function Cart() {
 									</div>
 
 									{/* Product Quantity and Subtotal */}
-									<div className='flex-center gap-x-14 sm:gap-x-6 ml-24 sm:ml-10 text-sm font-semibold'>
-										<input
-											type='number'
-											className='w-6 h-6 sm:w-5 border border-grayBorder outline-none text-center rounded-sm'
-											min={1}
-											value={quantities[product.id] || 1}
-											onChange={(e) => handleQuantityChange(product.id, parseInt(e.target.value))}
-										/>
-										<span>${product.price * (quantities[product.id] || 1)}</span>
+									<div className="flex-center-end w-full gap-x-9 sm:gap-x-6 text-sm font-semibold">
+										<div className='flex-center gap-2'>
+											<button
+												className='px-2 py-1 bg-gray-200 rounded'
+												onClick={() =>
+													handleQuantityChange(
+														product.id,
+														quantities[product.id] - 1
+													)
+												}
+												disabled={quantities[product.id] <= 1}>
+												-
+											</button>
+
+											<input
+												type='number'
+												className='w-6 h-6 sm:w-5 border border-grayBorder outline-none text-center rounded-sm'
+												min={1}
+												value={quantities[product.id] || 1}
+												onChange={(e) =>
+													handleQuantityChange(
+														product.id,
+														parseInt(e.target.value)
+													)
+												}
+											/>
+
+											<button
+												className='px-2 py-1 bg-gray-200 rounded'
+												onClick={() =>
+													handleQuantityChange(
+														product.id,
+														quantities[product.id] + 1
+													)
+												}>
+												+
+											</button>
+										</div>
+
+										<span className='mr-12'>
+											${product.price * (quantities[product.id] || 1)}
+										</span>
 									</div>
 
 									{/* Remove Product */}
 									<FaTrash
-										className='text-lg sm:text-sm text-gold cursor-pointer'
+										className='w-5 h-5 text-lg sm:text-sm text-gold cursor-pointer'
 										onClick={() => removeProductFromCart(product.id)}
 									/>
 								</div>
