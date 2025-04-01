@@ -1,15 +1,23 @@
+import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 import PageBanner from '../components/PageBanner'
 import InfoStrip from '../components/InfoStrip'
 import { FaTrash } from 'react-icons/fa'
 import { calculateTotalPrice } from '../utils/utils'
-import { removeProduct, clearCart } from '../store/cart/cartSlice'
+import { removeProduct, clearCart, updateQuantity } from '../store/cart/cartSlice'
 import Swal from 'sweetalert2'
 
 function Cart() {
 	const dispatch = useDispatch()
-	const { items, loading, error } = useSelector((state) => state.cart)
+	const { items } = useSelector((state) => state.cart)
+
+	const [quantities, setQuantities] = useState(
+		items.reduce((acc, product) => {
+			acc[product.id] = product.quantity
+			return acc
+		}, {})
+	)
 
 	const totalPrice = calculateTotalPrice(items)
 
@@ -28,6 +36,13 @@ function Cart() {
 
 	const removeProductFromCart = (id) => {
 		dispatch(removeProduct(id))
+	}
+
+	// Function to change quantity value and update in local state and redux
+	const handleQuantityChange = (id, newQuantity) => {
+		if (newQuantity < 1) return
+		setQuantities((prev) => ({ ...prev, [id]: newQuantity }))
+		dispatch(updateQuantity({ id, quantity: newQuantity }))
 	}
 
 	// Show Alert
@@ -91,9 +106,10 @@ function Cart() {
 											type='number'
 											className='w-6 h-6 sm:w-5 border border-grayBorder outline-none text-center rounded-sm'
 											min={1}
-											defaultValue={product.quantity}
+											value={quantities[product.id] || 1}
+											onChange={(e) => handleQuantityChange(product.id, parseInt(e.target.value))}
 										/>
-										<span>${product.price}</span>
+										<span>${product.price * (quantities[product.id] || 1)}</span>
 									</div>
 
 									{/* Remove Product */}

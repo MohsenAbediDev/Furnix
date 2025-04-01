@@ -42,8 +42,15 @@ const cartSlice = createSlice({
 			// Update localStorage after state change
 			localStorage.setItem('cart', JSON.stringify(state.items))
 		},
+
+		updateQuantity: (state, action) => {
+			const product = state.items.find((item) => item.id === action.payload.id)
+			if (product) {
+				product.quantity = action.payload.quantity
+			}
+		},
 	},
 })
 
-export const { addToCart, removeProduct, clearCart } = cartSlice.actions
+export const { addToCart, removeProduct, clearCart, updateQuantity } = cartSlice.actions
 export default cartSlice.reducer
