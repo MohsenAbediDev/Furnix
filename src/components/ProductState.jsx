@@ -18,7 +18,8 @@ export default function ProductState() {
 	const { items, loading, error } = useSelector((state) => state.products)
 
 	// Retrieve cart items from localStorage
-	const cartItems = JSON.parse(localStorage.getItem('cart'))
+	const cartItems = useSelector((state) => state.cart.items)
+	const isInCart = cartItems?.some((item) => item.id == productId)
 
 	// Get the quantity of the product if it's already in the cart
 	const cartProduct = cartItems?.find((item) => item.id === productId)
@@ -271,8 +272,9 @@ export default function ProductState() {
 
 							<button
 								className='w-44 md:w-32 h-14 border-[1px] border-black rounded-lg flex justify-around text-xl flex-center'
-								onClick={addToCart}>
-								Add To Cart
+								onClick={addToCart}
+								disabled={isInCart}>
+								{isInCart ? 'Added' : 'Add To Cart'}
 							</button>
 						</div>
 					</div>
