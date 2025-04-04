@@ -79,6 +79,13 @@
 	.show-menu {
 		@apply left-0;
 	}
+	.drag-none {
+		-webkit-user-drag: none;
+		-khtml-user-drag: none;
+		-moz-user-drag: none;
+		-o-user-drag: none;
+		user-drag: none;
+	}
 
 	/* Custom Scrollbars */
 	.custom-scrollbar-y {
