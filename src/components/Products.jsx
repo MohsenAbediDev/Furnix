@@ -77,6 +77,19 @@ function Products({ isFavorite, title, usePagination, resultCount, sort }) {
 							))}
 				</div>
 
+				{/* Show Empty Favorite Message */}
+				{sortedItems.length === 0 && (
+					<div className='text-xl text-center w-full p-4 rounded-lg'>
+						<p className='font-semibold text-lg text-gray-800 mb-2'>
+							You haven't added this product to your favorites yet.
+						</p>
+						<p className='text-sm text-gray-600'>
+							To access it more easily later, click the heart icon and add it to
+							your favorites!
+						</p>
+					</div>
+				)}
+
 				{/* Show pagination or show more button */}
 				{usePagination ? (
 					''
