@@ -5,6 +5,8 @@ import { MdOutlineCompareArrows } from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart as addToCartReducer } from '../store/cart/cartSlice'
 import { toggleFavorite } from '../store/favorite/favoriteSlice'
+import Swal from 'sweetalert2'
+import 'sweetalert2/dist/sweetalert2.min.css'
 
 function ProductCard({ product }) {
 	const dispatch = useDispatch()
@@ -20,6 +22,19 @@ function ProductCard({ product }) {
 		if (isInCart) return
 		const newProduct = { ...product, quantity: 1 }
 		dispatch(addToCartReducer(newProduct))
+
+		Swal.fire({
+			toast: true,
+			position: 'top-end',
+			icon: 'success',
+			title: `${product.name} added to cart`,
+			showConfirmButton: false,
+			timer: 1500,
+			timerProgressBar: true,
+			customClass: {
+				popup: 'mt-10',
+			},
+		})
 	}
 
 	// Like product and set on localStorage
