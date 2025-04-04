@@ -10,10 +10,14 @@ function ProductCard({ product }) {
 	const dispatch = useDispatch()
 	const { items } = useSelector((state) => state.cart)
 	const favorites = useSelector((state) => state.favorite.favorites)
+
+	// Check products
 	const isLiked = favorites.some((item) => item.id === product.id)
+	const isInCart = items.some((item) => item.id === product.id)
 
 	const addToCart = (e) => {
 		e.preventDefault()
+		if (isInCart) return
 		const newProduct = { ...product, quantity: 1 }
 		dispatch(addToCartReducer(newProduct))
 	}
@@ -48,8 +52,9 @@ function ProductCard({ product }) {
 				<div className='w-full flex flex-col items-center'>
 					<button
 						onClick={(e) => addToCart(e)}
-						className='bg-white w-[153px] h-[39px] text-gold'>
-						Add to cart
+						className='bg-white w-[153px] h-[39px] text-gold disabled:opacity-50'
+						disabled={isInCart}>
+						{isInCart ? 'In Cart' : 'Add to cart'}
 					</button>
 
 					<div className='flex-center-between text-sm w-11/12 sm:w-full sm:hidden text-white font-bold mt-5'>
