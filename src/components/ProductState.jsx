@@ -6,6 +6,8 @@ import { FaStarHalf } from 'react-icons/fa'
 import ProductCard from './ProductCard'
 import { Link, useParams } from 'react-router-dom'
 import { addToCart as addToCartReducer } from '../store/cart/cartSlice'
+import Swal from 'sweetalert2'
+import 'sweetalert2/dist/sweetalert2.min.css'
 
 export default function ProductState() {
 	// Initialize the Redux dispatch function
@@ -33,8 +35,22 @@ export default function ProductState() {
 
 	// Function to add the product to the cart
 	const addToCart = () => {
+		if (isInCart) return
 		const newProduct = { ...filteredProduct, quantity: quantity }
 		dispatch(addToCartReducer(newProduct))
+
+		Swal.fire({
+			toast: true,
+			position: 'top-end',
+			icon: 'success',
+			title: `${filteredProduct.name} added to cart`,
+			showConfirmButton: false,
+			timer: 1500,
+			timerProgressBar: true,
+			customClass: {
+				popup: 'mt-10',
+			},
+		})
 	}
 
 	// Fetch products when the component mounts if the product list is empty
@@ -138,25 +154,6 @@ export default function ProductState() {
 						<div className='bg-skeleton animate-pulse w-[500px] h-[350px] rounded-lg flex-center'></div>
 					</div>
 				</section>
-
-				{/* <section className='flex flex-col items-center gap-y-10 py-10'>
-					<p className='text-center text-2xl font-semibold '>
-						Related Products
-					</p>
-					<div className='flex-center gap-x-8 md:flex-wrap md:gap-2'>
-						<div className='w-60 h-80 bg-skeleton animate-pulse'></div>
-						<div className='w-60 h-80 bg-skeleton animate-pulse'></div>
-						<div className='w-60 h-80 bg-skeleton animate-pulse'></div>
-						<div className='w-60 h-80 bg-skeleton animate-pulse'></div>
-					</div>
-					<div>
-						<Link
-							to='/shop'
-							className='border-gold border-2 text-base text-gold px-14 py-2 my-7 hover:bg-gold hover:text-white duration-200'>
-							Show More
-						</Link>
-					</div>
-				</section> */}
 			</div>
 		)
 	}
