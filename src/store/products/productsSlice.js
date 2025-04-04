@@ -5,7 +5,7 @@ import axios from 'axios'
 export const fetchProducts = createAsyncThunk(
 	'products/fetchProducts',
 	async () => {
-		const response = await axios.get('http://localhost:3000/products')
+		const response = await axios.get('https://projects-server-4s3m.onrender.com/furniro-products') //Change to http://localhost:3000/products for use json-server 
 		return response.data
 	}
 )
