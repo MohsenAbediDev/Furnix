@@ -8,6 +8,7 @@ import { Link, useParams } from 'react-router-dom'
 import { addToCart as addToCartReducer } from '../store/cart/cartSlice'
 import Swal from 'sweetalert2'
 import 'sweetalert2/dist/sweetalert2.min.css'
+import { isGithubPages } from '../utils/utils'
 
 export default function ProductState() {
 	// Initialize the Redux dispatch function
@@ -182,7 +183,11 @@ export default function ProductState() {
 										key={index}
 										className='bg-primary rounded-md w-20 sm:w-24 h-20 flex-center'>
 										<img
-											src={filteredProduct.image}
+											src={
+												isGithubPages()
+													? `/Furnix/${filteredProduct.image}`
+													: filteredProduct.image
+											}
 											alt={filteredProduct.name}
 											onClick={() => handleImageClick(filteredProduct.image)}
 											className='w-full rounded-md cursor-pointer brightness-75'
@@ -193,7 +198,7 @@ export default function ProductState() {
 
 						<div className='h-[450px] w-[400px] md:w-full flex-center'>
 							<img
-								src={mainImage}
+								src={isGithubPages() ? `/Furnix/${mainImage}` : mainImage}
 								alt={filteredProduct.name}
 								className={`w-full h-full rounded-lg transition-all duration-300 ease-in-out ${
 									animateImage ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
@@ -288,12 +293,20 @@ export default function ProductState() {
 
 				<div className='flex-center sm:flex-col gap-x-9 md:gap-x-2 sm:gap-y-5'>
 					<img
-						src={filteredProduct.image}
+						src={
+							isGithubPages()
+								? `/Furnix/${filteredProduct.image}`
+								: filteredProduct.image
+						}
 						alt={filteredProduct.name}
 						className='max-w-96 rounded-md brightness-75'
 					/>
 					<img
-						src={filteredProduct.image}
+						src={
+							isGithubPages()
+								? `/Furnix/${filteredProduct.image}`
+								: filteredProduct.image
+						}
 						alt={filteredProduct.name}
 						className='max-w-96 rounded-md brightness-75'
 					/>
