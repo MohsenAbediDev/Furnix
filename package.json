@@ -1,11 +1,17 @@
 {
-  "name": "react-tailwind-ecommerce",
+  "homepage": "https://MohsenAbediDev.github.io/Furnix",
+  "name": "furnix",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "start": "vite --host",
-    "dev": "node ./node_modules/vite/bin/vite.js --host",
+    "start-dev": "node ./node_modules/vite/bin/vite.js --host",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "server": "json-server data/db.json"
   },
   "dependencies": {
@@ -14,6 +20,7 @@
     "@mui/material": "^6.2.0",
     "@reduxjs/toolkit": "^2.6.1",
     "axios": "^1.8.2",
+    "gh-pages": "^6.3.0",
     "json-server": "^1.0.0-beta.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
