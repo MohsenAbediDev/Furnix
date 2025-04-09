@@ -180,7 +180,7 @@ export default function ProductState() {
 								.map((_, index) => (
 									<div
 										key={index}
-										className='bg-primary rounded-md w-20 h-20 flex-center'>
+										className='bg-primary rounded-md w-20 sm:w-24 h-20 flex-center'>
 										<img
 											src={filteredProduct.image}
 											alt={filteredProduct.name}
