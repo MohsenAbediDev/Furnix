@@ -8,6 +8,7 @@ import CartSidebarProduct from './CartSidebarProduct'
 import { useSelector, useDispatch } from 'react-redux'
 import { calculateTotalPrice } from '../utils/utils'
 import { clearCart } from '../store/cart/cartSlice'
+import { isGithubPages } from '../utils/utils'
 
 function Navbar() {
 	const dispatch = useDispatch()
@@ -23,6 +24,11 @@ function Navbar() {
 	const overlay = useRef()
 
 	const location = useLocation()
+
+	function getImageSrc(imageName) {
+		const basePath = isGithubPages() ? '/Furnix' : ''
+		return `${basePath}/icons/${imageName}.png`
+	}
 
 	const showCartSidebar = () => {
 		setToggleValue(!toggleValue)
@@ -78,7 +84,13 @@ function Navbar() {
 					onClick={showMenu}
 				/>
 				<Link to='/' className='flex-center'>
-					<img className='w-8 h-6' src='/images/Logo.png' alt='Furniro' />
+					<img
+						className='w-8 h-6'
+						src={
+							isGithubPages() ? '/Furnix/images/Logo.png' : '/images/Logo.png'
+						}
+						alt='Furniro'
+					/>
 					<span className='font-montserrat font-bold text-xl'>FURNIRO</span>
 				</Link>
 			</div>
@@ -94,19 +106,19 @@ function Navbar() {
 			{/* Action routes */}
 			<div className='flex-center gap-x-5'>
 				<Link to='/user' className='w-5'>
-					<img src='/icons/User.png' />
+					<img src={getImageSrc('User')} />
 				</Link>
 
 				<button className='w-5'>
-					<img src='/icons/Search.png' />
+					<img src={getImageSrc('Search')} />
 				</button>
 
 				<Link to='/favorite' className='w-5'>
-					<img src='/icons/Heart.png' />
+					<img src={getImageSrc('Heart')} />
 				</Link>
 
 				<button className='w-5' onClick={showCartSidebar}>
-					<img src='/icons/Cart.png' />
+					<img src={getImageSrc('Cart')} />
 				</button>
 			</div>
 
@@ -141,7 +153,7 @@ function Navbar() {
 					<p className='font-bold text-xl'>Shopping Cart</p>
 					<img
 						className='cursor-pointer'
-						src='/icons/Cart-Clear.png'
+						src={getImageSrc('Cart-Clear')}
 						onClick={clearCartHandler}
 					/>
 				</div>

@@ -185,7 +185,7 @@ export default function ProductState() {
 											src={filteredProduct.image}
 											alt={filteredProduct.name}
 											onClick={() => handleImageClick(filteredProduct.image)}
-											className='w-full rounded-md cursor-pointer brightness-50'
+											className='w-full rounded-md cursor-pointer brightness-75'
 										/>
 									</div>
 								))}

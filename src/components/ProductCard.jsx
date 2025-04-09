@@ -7,6 +7,7 @@ import { addToCart as addToCartReducer } from '../store/cart/cartSlice'
 import { toggleFavorite } from '../store/favorite/favoriteSlice'
 import Swal from 'sweetalert2'
 import 'sweetalert2/dist/sweetalert2.min.css'
+import { isGithubPages } from '../utils/utils'
 
 function ProductCard({ product }) {
 	const dispatch = useDispatch()
@@ -52,7 +53,7 @@ function ProductCard({ product }) {
 			to={`/product/${product.id}`}
 			className='w-[220px] sm:w-[170px] h-[345px] sm:h-[315px] bg-card relative overflow-hidden'>
 			<img
-				src={product.image}
+				src={isGithubPages() ? `/Furnix/${product.image}` : product.image}
 				alt={`${product.name} ${product.category}`}
 				className='w-full'
 			/>

@@ -1,3 +1,5 @@
+import { isGithubPages } from '../utils/utils'
+
 function Range() {
 	return (
 		<section className='w-full flex-center'>
@@ -14,7 +16,11 @@ function Range() {
 					{/* Dining Box */}
 					<div className='flex flex-col items-center'>
 						<img
-							src='/images/image 106.png'
+							src={
+								isGithubPages()
+									? `/Furnix/images/image 106.png`
+									: '/images/image 106.png'
+							}
 							className='rounded-md w-[250px] h-[342px]'
 						/>
 						<p className='font-semibold text-xl mt-6 sm:mt-2'>Dining</p>
@@ -23,7 +29,11 @@ function Range() {
 					{/* Living Box */}
 					<div className='flex flex-col items-center'>
 						<img
-							src='/images/image 100.png'
+							src={
+								isGithubPages()
+									? `/Furnix/images/image 100.png`
+									: '/images/image 100.png'
+							}
 							className='rounded-md w-[250px] h-[342px]'
 						/>
 						<p className='font-semibold text-xl mt-6'>Living</p>
@@ -32,7 +42,11 @@ function Range() {
 					{/* Bedroom Box */}
 					<div className='flex flex-col items-center'>
 						<img
-							src='/images/image 101.png'
+							src={
+								isGithubPages()
+									? `/Furnix/images/image 101.png`
+									: '/images/image 101.png'
+							}
 							className='rounded-md w-[250px] h-[342px]'
 						/>
 						<p className='font-semibold text-xl mt-6'>Bedroom</p>

@@ -11,6 +11,10 @@ const ResetPageScroll = () => {
 	return null
 }
 
+export const isGithubPages = () => {
+	return window.location.hostname === 'mohsenabedidev.github.io'
+}
+
 export const calculateTotalPrice = (items) => {
 	return (
 		items?.reduce(

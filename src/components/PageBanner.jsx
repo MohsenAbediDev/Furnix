@@ -1,5 +1,6 @@
 import { IoIosArrowForward } from 'react-icons/io'
 import { Link } from 'react-router-dom'
+import { isGithubPages } from '../utils/utils'
 
 function PageBanner() {
 	const pageName = window.location.pathname.split('/')[1]
@@ -10,7 +11,11 @@ function PageBanner() {
 
 			<div className='relative w-full h-full flex-center flex-col gap-y-2 font-poppins z-10'>
 				{/* Logo */}
-				<img className='w-9' src='/images/Logo.png' alt='Furniro logo' />
+				<img
+					className='w-9'
+					src={isGithubPages() ? '/Furnix/images/Logo.png' : '/images/Logo.png'}
+					alt='Furniro logo'
+				/>
 
 				{/* Page name */}
 				<h1 className='font-bold text-3xl'>{pageName}</h1>

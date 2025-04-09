@@ -11,6 +11,7 @@ import {
 	updateQuantity,
 } from '../store/cart/cartSlice'
 import Swal from 'sweetalert2'
+import { isGithubPages } from '../utils/utils'
 
 function Cart() {
 	const dispatch = useDispatch()
@@ -94,7 +95,9 @@ function Cart() {
 								{/* Product image */}
 								<img
 									className='w-16 h-16 sm:w-16 sm:h-16 rounded-md'
-									src={product.image}
+									src={
+										isGithubPages() ? `/Furnix/${product.image}` : product.image
+									}
 								/>
 
 								<div className='flex-center-between flex-grow w-full ml-3 sm:ml-1.5'>
@@ -105,7 +108,7 @@ function Cart() {
 									</div>
 
 									{/* Product Quantity and Subtotal */}
-									<div className="flex-center-end w-full gap-x-9 sm:gap-x-6 text-sm font-semibold">
+									<div className='flex-center-end w-full gap-x-9 sm:gap-x-6 text-sm font-semibold'>
 										<div className='flex-center gap-2'>
 											<button
 												className='px-2 py-1 bg-gray-200 rounded'

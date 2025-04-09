@@ -3,10 +3,16 @@ import PageBanner from '../components/PageBanner'
 import Products from '../components/Products'
 import InfoStrip from '../components/InfoStrip'
 import PaginationRounded from '../components/PaginationRounded'
+import { isGithubPages } from '../utils/utils'
 
 function Shop() {
 	const [resultCount, setResultCount] = useState(8)
 	const [sort, setSort] = useState('default')
+
+	function getImageSrc(imageName) {
+		const basePath = isGithubPages() ? '/Furnix' : ''
+		return `${basePath}/icons/${imageName}.png`
+	}
 
 	return (
 		<div>
@@ -18,10 +24,10 @@ function Shop() {
 				{/* Filter section */}
 				<div className='flex-center gap-x-2'>
 					{/* Filter */}
-					<img src='/icons/FilterSetting.png' className='cursor-pointer' />
+					<img src={getImageSrc('FilterSetting')} className='cursor-pointer' />
 					<span className='font-semibold cursor-pointer'>Filter</span>
-					<img src='/icons/Grid.png' className='cursor-pointer' />
-					<img src='/icons/ViewList.png' className='cursor-pointer' />
+					<img src={getImageSrc('Grid')} className='cursor-pointer' />
+					<img src={getImageSrc('ViewList')} className='cursor-pointer' />
 
 					<span className='font-light mx-2'>|</span>
 

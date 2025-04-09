@@ -1,3 +1,5 @@
+import { isGithubPages } from "../utils/utils"
+
 function FuniroFurniture() {
 	return (
 		<section>
@@ -8,7 +10,9 @@ function FuniroFurniture() {
 				</div>
 
 				<img
-					src='/images/Share.png'
+					src={
+						isGithubPages() ? `/Furnix/images/Share.png` : '/images/Share.png'
+					}
 					className='bg-cover mb-5 select-none drag-none'
 				/>
 			</div>
