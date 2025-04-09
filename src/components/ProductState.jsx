@@ -33,6 +33,17 @@ export default function ProductState() {
 	const filteredProduct =
 		items.filter((product) => product.id === productId)[0] || {}
 
+	// Image States
+	const [mainImage, setMainImage] = useState(filteredProduct?.image)
+	const [animateImage, setAnimateImage] = useState(false)
+
+	const handleImageClick = (imgSrc) => {
+		setAnimateImage(true)
+		setMainImage(imgSrc)
+
+		setTimeout(() => setAnimateImage(false), 300) // Reset animation
+	}
+
 	// Function to add the product to the cart
 	const addToCart = () => {
 		if (isInCart) return
@@ -164,41 +175,29 @@ export default function ProductState() {
 				<div className='flex justify-center md:flex-col gap-x-16'>
 					<div className='flex gap-x-7 md:flex-col-reverse'>
 						<div className='flex flex-col md:flex-row md:justify-between gap-y-5 md:mt-5'>
-							<div className='bg-primary rounded-md w-20 h-20 flex-center'>
-								<img
-									src='/images/Stuart sofa 1.png'
-									alt=''
-									className='w-full'
-								/>
-							</div>
-							<div className='bg-primary rounded-md w-20 h-20 flex-center'>
-								<img
-									src='/images/Maya sofa three seater (1) 1.png'
-									alt=''
-									className='w-full'
-								/>
-							</div>
-							<div className='bg-primary rounded-md w-20 h-20 flex-center'>
-								<img
-									src='/images/Outdoor sofa set 2.png'
-									alt=''
-									className='w-full'
-								/>
-							</div>
-							<div className='bg-primary rounded-md w-20 h-20 flex-center'>
-								<img
-									src='/images/Outdoor sofa set_2 1.png'
-									alt=''
-									className='w-full'
-								/>
-							</div>
+							{Array(4)
+								.fill()
+								.map((_, index) => (
+									<div
+										key={index}
+										className='bg-primary rounded-md w-20 h-20 flex-center'>
+										<img
+											src={filteredProduct.image}
+											alt={filteredProduct.name}
+											onClick={() => handleImageClick(filteredProduct.image)}
+											className='w-full rounded-md cursor-pointer brightness-50'
+										/>
+									</div>
+								))}
 						</div>
 
 						<div className='h-[450px] w-[400px] md:w-full flex-center'>
 							<img
-								src={filteredProduct.image}
+								src={mainImage}
 								alt={filteredProduct.name}
-								className='w-full h-full rounded-lg'
+								className={`w-full h-full rounded-lg transition-all duration-300 ease-in-out ${
+									animateImage ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
+								}`}
 							/>
 						</div>
 					</div>
@@ -287,21 +286,17 @@ export default function ProductState() {
 					{filteredProduct.description}
 				</p>
 
-				<div className='flex-center gap-x-9 md:gap-x-2'>
-					<div className='bg-primary w-[500px] h-[350px] rounded-lg flex-center'>
-						<img
-							src='/images/Cloud sofa three seater + ottoman_1 1.png'
-							alt=''
-							className='w-full'
-						/>
-					</div>
-					<div className='bg-primary w-[500px] h-[350px] rounded-lg flex-center'>
-						<img
-							src='/images/Cloud sofa three seater + ottoman_1 1.png'
-							alt=''
-							className='w-full'
-						/>
-					</div>
+				<div className='flex-center sm:flex-col gap-x-9 md:gap-x-2 sm:gap-y-5'>
+					<img
+						src={filteredProduct.image}
+						alt={filteredProduct.name}
+						className='max-w-96 rounded-md brightness-75'
+					/>
+					<img
+						src={filteredProduct.image}
+						alt={filteredProduct.name}
+						className='max-w-96 rounded-md brightness-75'
+					/>
 				</div>
 			</section>
 
