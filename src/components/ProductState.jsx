@@ -3,9 +3,11 @@ import { useEffect, useState } from 'react'
 import { fetchProducts } from '../store/products/productsSlice'
 import { FaStar } from 'react-icons/fa'
 import { FaStarHalf } from 'react-icons/fa'
+import { IoHeartOutline, IoHeart } from 'react-icons/io5'
 import ProductCard from './ProductCard'
 import { Link, useParams } from 'react-router-dom'
 import { addToCart as addToCartReducer } from '../store/cart/cartSlice'
+import { toggleFavorite } from '../store/favorite/favoriteSlice'
 import Swal from 'sweetalert2'
 import 'sweetalert2/dist/sweetalert2.min.css'
 import { isGithubPages } from '../utils/utils'
@@ -18,11 +20,14 @@ export default function ProductState() {
 	const productId = useParams().id
 
 	// Extract product-related state from the Redux store
-	const { items, loading, error } = useSelector((state) => state.products)
+	const { items, loading } = useSelector((state) => state.products)
+	const favorites = useSelector((state) => state.favorite.favorites)
 
 	// Retrieve cart items from localStorage
 	const cartItems = useSelector((state) => state.cart.items)
 	const isInCart = cartItems?.some((item) => item.id == productId)
+
+	const isLiked = favorites?.some((item) => item.id === productId)
 
 	// Get the quantity of the product if it's already in the cart
 	const cartProduct = cartItems?.find((item) => item.id === productId)
@@ -43,6 +48,12 @@ export default function ProductState() {
 		setMainImage(imgSrc)
 
 		setTimeout(() => setAnimateImage(false), 300) // Reset animation
+	}
+
+	// Like product and set on localStorage
+	const likeProduct = (e) => {
+		e.preventDefault()
+		dispatch(toggleFavorite(filteredProduct))
 	}
 
 	// Function to add the product to the cart
@@ -283,6 +294,12 @@ export default function ProductState() {
 								onClick={addToCart}
 								disabled={isInCart}>
 								{isInCart ? 'Added' : 'Add To Cart'}
+							</button>
+
+							<button
+								className='w-44 md:w-28 h-14 border-[1px] border-black rounded-lg flex justify-around text-2xl flex-center'
+								onClick={(e) => likeProduct(e)}>
+								{isLiked ? <IoHeart /> : <IoHeartOutline />}
 							</button>
 						</div>
 					</div>

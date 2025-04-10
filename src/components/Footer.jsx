@@ -42,7 +42,7 @@ function Footer() {
 						<input
 							type='email'
 							className='footer-input'
-							placeholder='Enter Your Email Address'
+							placeholder='Enter Your Email Address sm:max-w-24'
 						/>
 						<button className='footer-input'> Submit </button>
 					</form>
