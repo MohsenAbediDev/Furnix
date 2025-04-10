@@ -41,8 +41,8 @@ function Footer() {
 					<form className='flex-center sm:flex-center-start gap-x-2'>
 						<input
 							type='email'
-							className='footer-input'
-							placeholder='Enter Your Email Address sm:max-w-24'
+							className='footer-input sm:max-w-60'
+							placeholder='Enter Your Email Address'
 						/>
 						<button className='footer-input'> Submit </button>
 					</form>
