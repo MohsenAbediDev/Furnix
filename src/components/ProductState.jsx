@@ -35,7 +35,7 @@ export default function ProductState() {
 		items.filter((product) => product.id === productId)[0] || {}
 
 	// Image States
-	const [mainImage, setMainImage] = useState(filteredProduct?.image)
+	const [mainImage, setMainImage] = useState(filteredProduct.image)
 	const [animateImage, setAnimateImage] = useState(false)
 
 	const handleImageClick = (imgSrc) => {
@@ -71,6 +71,13 @@ export default function ProductState() {
 			dispatch(fetchProducts())
 		}
 	}, [dispatch, items.length])
+
+	// Update Main Image
+	useEffect(() => {
+		if (filteredProduct?.image) {
+			setMainImage(filteredProduct.image)
+		}
+	}, [filteredProduct.image])
 
 	// Update the cart in Redux when the quantity changes
 	useEffect(() => {
@@ -181,7 +188,7 @@ export default function ProductState() {
 								.map((_, index) => (
 									<div
 										key={index}
-										className='bg-primary rounded-md w-20 sm:w-24 h-20 flex-center'>
+										className='bg-primary rounded-md w-20 sm:max-w-24 h-20 flex-center'>
 										<img
 											src={
 												isGithubPages()

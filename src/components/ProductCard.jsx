@@ -73,12 +73,12 @@ function ProductCard({ product }) {
 						{isInCart ? 'In Cart' : 'Add to cart'}
 					</button>
 
-					<div className='flex-center-between text-sm w-11/12 sm:w-full sm:hidden text-white font-bold mt-5'>
+					<div className='flex-center-between sm:justify-center sm:gap-x-5 text-sm w-11/12 sm:w-full text-white font-bold mt-5'>
 						<span className='flex-center gap-x-1 sm:text-xs'>
-							<IoShareSocialOutline className='text-lg sm:text-xs' /> Share
+							<IoShareSocialOutline className='text-lg' /> Share
 						</span>
 
-						<span className='flex-center gap-x-1 sm:text-xs'>
+						<span className='flex-center gap-x-1 sm:text-xs sm:hidden'>
 							<MdOutlineCompareArrows className='text-lg sm:text-xs' /> Compare
 						</span>
 
@@ -86,9 +86,9 @@ function ProductCard({ product }) {
 							className='flex-center gap-x-1 sm:text-xs'
 							onClick={(e) => likeProduct(e)}>
 							{isLiked ? (
-								<IoHeart className='text-lg sm:text-xs' />
+								<IoHeart className='text-lg' />
 							) : (
-								<IoHeartOutline className='text-lg sm:text-xs' />
+								<IoHeartOutline className='text-lg' />
 							)}
 							Like
 						</span>
